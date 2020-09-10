@@ -1,0 +1,16 @@
+it/cnr/si/cool/jconon/spid/service/SPIDIntegrationService$1.class
+it/cnr/si/cool/jconon/spid/model/Issuer.class
+it/cnr/si/cool/jconon/spid/service/SPIDIntegrationService$3.class
+it/cnr/si/cool/jconon/spid/model/KeyStore.class
+it/cnr/si/cool/jconon/spid/model/SPIDRequest.class
+it/cnr/si/cool/jconon/configuration/SPIDConfiguration.class
+it/cnr/si/cool/jconon/spid/config/AuthenticationException.class
+it/cnr/si/cool/jconon/spid/repository/SPIDRepository.class
+it/cnr/si/cool/jconon/spid/config/YamlPropertyLoaderFactory.class
+it/cnr/si/cool/jconon/spid/model/IdpEntry.class
+it/cnr/si/cool/jconon/spid/config/SpidProperties.class
+it/cnr/si/cool/jconon/spid/rest/SPID.class
+it/cnr/si/cool/jconon/spid/config/IdpConfiguration.class
+it/cnr/si/cool/jconon/spid/service/SPIDIntegrationService.class
+it/cnr/si/cool/jconon/configuration/SPIDConfiguration$JerseySPIDConfig.class
+it/cnr/si/cool/jconon/spid/service/SPIDIntegrationService$2.class

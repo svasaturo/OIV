@@ -1,0 +1,86 @@
+Manifest-Version: 1.0
+mode: development
+Implementation-Version: 4.3.20-SNAPSHOT
+Specification-Title: Concorsi On-Line
+Class-Path: cool-jconon-webapp-resources-4.3.20-SNAPSHOT.jar cool-jcon
+ on-backend-4.3.20-SNAPSHOT.jar jasperreports-6.0.0.jar commons-beanut
+ ils-1.9.0.jar commons-digester-2.1.jar commons-logging-1.1.1.jar itex
+ tpdf-5.5.0.jar itext-pdfa-5.5.0.jar jcommon-1.0.15.jar ecj-4.3.1.jar 
+ lucene-core-4.5.1.jar lucene-analyzers-common-4.5.1.jar lucene-queryp
+ arser-4.5.1.jar lucene-queries-4.5.1.jar lucene-sandbox-4.5.1.jar jak
+ arta-regexp-1.4.jar poi-excelant-3.13.jar poi-3.13.jar commons-codec-
+ 1.9.jar poi-ooxml-3.13.jar poi-ooxml-schemas-3.13.jar xmlbeans-2.6.0.
+ jar stax-api-1.0.1.jar ant-1.8.2.jar ant-launcher-1.8.2.jar javase-2.
+ 0.jar core-2.0.jar spring-tx-5.1.6.RELEASE.jar spring-beans-5.1.6.REL
+ EASE.jar spring-core-5.1.6.RELEASE.jar spring-jcl-5.1.6.RELEASE.jar c
+ ool-common-web-3.2.5.jar cool-common-rest-3.2.5.jar cool-common-core-
+ 3.2.5.jar chemistry-opencmis-client-impl-1.1.0.jar chemistry-opencmis
+ -client-api-1.1.0.jar chemistry-opencmis-commons-api-1.1.0.jar chemis
+ try-opencmis-commons-impl-1.1.0.jar woodstox-core-asl-4.4.1.jar stax2
+ -api-3.1.4.jar chemistry-opencmis-client-bindings-1.1.0.jar cxf-rt-fr
+ ontend-jaxws-3.0.12.jar asm-3.3.1.jar cxf-core-3.0.12.jar xmlschema-c
+ ore-2.2.1.jar cxf-rt-bindings-soap-3.0.12.jar cxf-rt-wsdl-3.0.12.jar 
+ cxf-rt-databinding-jaxb-3.0.12.jar jaxb-impl-2.2.11.jar jaxb-core-2.2
+ .11.jar cxf-rt-bindings-xml-3.0.12.jar cxf-rt-frontend-simple-3.0.12.
+ jar cxf-rt-ws-addr-3.0.12.jar cxf-rt-transports-http-3.0.12.jar cxf-r
+ t-ws-policy-3.0.12.jar wsdl4j-1.6.3.jar neethi-3.0.3.jar commons-http
+ client-3.1.jar opencmis-criteria-1.2.jar gson-2.2.4.jar commons-io-2.
+ 4.jar cool-common-api-3.2.5.jar json-20140107.jar freemarker-2.3.22.j
+ ar javax.activation-api-1.2.0.jar javax.mail-api-1.5.6.jar rest-1.0.1
+ .jar commons-fileupload-1.3.3.jar dom4j-1.6.jar cool-bulkinfo-3.2.5.j
+ ar cool-view-3.2.5.jar cool-common-web-js-3.2.5.jar slf4j-api-1.7.21.
+ jar jackson-databind-2.11.2.jar jackson-annotations-2.11.2.jar jackso
+ n-core-2.11.2.jar validation-api-2.0.1.Final.jar guava-15.0-cdi1.0.ja
+ r urlrewritefilter-4.0.3.jar jaxen-1.1.4.jar spring-boot-starter-jers
+ ey-2.1.9.RELEASE.jar spring-boot-starter-json-2.1.9.RELEASE.jar jacks
+ on-datatype-jdk8-2.9.9.jar jackson-datatype-jsr310-2.9.9.jar jackson-
+ module-parameter-names-2.9.9.jar spring-boot-starter-validation-2.1.9
+ .RELEASE.jar spring-web-5.1.6.RELEASE.jar jersey-server-2.27.jar jers
+ ey-common-2.27.jar osgi-resource-locator-1.0.1.jar jersey-client-2.27
+ .jar javax.ws.rs-api-2.1.jar jersey-media-jaxb-2.27.jar jersey-contai
+ ner-servlet-core-2.27.jar jersey-container-servlet-2.27.jar jersey-be
+ an-validation-2.27.jar jersey-spring4-2.27.jar jersey-hk2-2.27.jar hk
+ 2-locator-2.5.0-b42.jar aopalliance-repackaged-2.5.0-b42.jar javassis
+ t-3.22.0-CR2.jar hk2-2.5.0-b42.jar hk2-utils-2.5.0-b42.jar javax.inje
+ ct-1.jar hk2-api-2.5.0-b42.jar config-types-2.5.0-b42.jar hk2-core-2.
+ 5.0-b42.jar hk2-config-2.5.0-b42.jar hk2-runlevel-2.5.0-b42.jar class
+ -model-2.5.0-b42.jar asm-all-repackaged-2.5.0-b42.jar spring-bridge-2
+ .5.0-b42.jar spring-aop-5.1.6.RELEASE.jar jersey-media-json-jackson-2
+ .27.jar jersey-entity-filtering-2.27.jar jackson-module-jaxb-annotati
+ ons-2.8.10.jar jaxb-api-2.3.1.jar spring-boot-starter-tomcat-2.1.9.RE
+ LEASE.jar javax.annotation-api-1.3.2.jar tomcat-embed-core-9.0.26.jar
+  tomcat-embed-el-9.0.26.jar tomcat-embed-websocket-9.0.26.jar spring-
+ boot-starter-actuator-2.1.9.RELEASE.jar spring-boot-starter-2.1.9.REL
+ EASE.jar spring-boot-2.1.9.RELEASE.jar spring-boot-autoconfigure-2.1.
+ 9.RELEASE.jar spring-boot-starter-logging-2.1.9.RELEASE.jar logback-c
+ lassic-1.2.3.jar logback-core-1.2.3.jar log4j-to-slf4j-2.11.2.jar log
+ 4j-api-2.11.2.jar jul-to-slf4j-1.7.28.jar snakeyaml-1.23.jar spring-b
+ oot-actuator-autoconfigure-2.1.9.RELEASE.jar spring-boot-actuator-2.1
+ .9.RELEASE.jar micrometer-core-1.1.7.jar HdrHistogram-2.1.9.jar Laten
+ cyUtils-2.0.3.jar spring-boot-starter-web-2.1.9.RELEASE.jar hibernate
+ -validator-6.0.17.Final.jar jboss-logging-3.3.2.Final.jar classmate-1
+ .3.4.jar spring-webmvc-5.1.6.RELEASE.jar spring-expression-5.1.6.RELE
+ ASE.jar hazelcast-spring-3.7.2.jar hazelcast-3.7.2.jar spring-context
+ -support-5.1.6.RELEASE.jar spring-context-5.1.6.RELEASE.jar hazelcast
+ -shell-0.0.6.jar spring-boot-starter-remote-shell-1.3.3.RELEASE.jar c
+ rash.cli-1.3.2.jar crash.connectors.ssh-1.3.2.jar sshd-core-0.11.0.ja
+ r sshd-pam-0.11.0.jar jpam-1.1.jar bcprov-jdk15on-1.51.jar bcpkix-jdk
+ 15on-1.51.jar mina-core-2.0.7.jar crash.embed.spring-1.3.2.jar crash.
+ plugins.cron-1.3.2.jar cron4j-2.2.5.jar crash.plugins.mail-1.3.2.jar 
+ crash.shell-1.3.2.jar groovy-2.4.6.jar commons-email-1.5.jar javax.ma
+ il-1.5.6.jar activation-1.1.jar pdfbox-2.0.15.jar fontbox-2.0.15.jar 
+ commons-text-1.1.jar commons-lang3-3.5.jar cool-jconon-print-4.3.20-S
+ NAPSHOT.jar cool-jconon-remote-4.3.20-SNAPSHOT.jar cool-jconon-spid-4
+ .3.20-SNAPSHOT.jar spring-security-saml2-core-1.0.2.RELEASE.jar opens
+ aml-2.6.1.jar openws-1.5.1.jar xmltooling-1.4.1.jar bcprov-jdk15-1.46
+ .jar not-yet-commons-ssl-0.3.9.jar xmlsec-1.5.6.jar commons-collectio
+ ns-3.2.1.jar commons-lang-2.6.jar velocity-1.7.jar esapi-2.0.1.jar jo
+ da-time-2.2.jar xercesImpl-2.10.0.jar serializer-2.7.1.jar xml-resolv
+ er-1.2.jar xalan-2.7.1.jar spring-security-config-3.1.2.RELEASE.jar a
+ opalliance-1.0.jar spring-security-core-3.1.2.RELEASE.jar spring-secu
+ rity-web-3.1.2.RELEASE.jar xml-apis-1.4.01.jar
+Build-Jdk-Spec: 1.8
+Created-By: Maven Integration for Eclipse
+Specification-Version: 4.3.20-SNAPSHOT
+Dependencies: org.dom4j,javax.mail.api
+

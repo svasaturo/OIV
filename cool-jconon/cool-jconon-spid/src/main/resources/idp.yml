@@ -1,0 +1,103 @@
+spid:
+  idp:
+    test:
+      file: classpath:metadata/idp/test-metadata.xml
+      name: IdP test
+      imageUrl: res/img/spid-agid-logo-lb.png
+      postURL: http://localhost:8088/sso
+      entityId: http://localhost:8088
+      profile: dev
+
+    Validator-SAML:
+      file: classpath:metadata/idp/validator-metadata.xml
+      name: Validator SAML
+      imageUrl: res/img/idp-validator.png
+      entityId: https://validator.spid.gov.it
+      postURL: https://validator.spid.gov.it/samlsso
+      profile: validator-spid
+
+    Aruba:
+      file: classpath:metadata/idp/aruba-metadata.xml
+      name: Aruba.it ID
+      imageUrl: res/img/spid-idp-arubaid.png
+      entityId: https://loginspid.aruba.it
+      postURL: https://loginspid.aruba.it/ServiceLoginWelcome
+      profile: prod
+
+    Intesa:
+      file: classpath:metadata/idp/intesa-metadata.xml
+      name: Intesa ID
+      imageUrl: res/img/spid-idp-intesaid.png
+      entityId: https://spid.intesa.it
+      postURL: https://spid.intesa.it/Time4UserServices/services/idp/AuthnRequest/
+      profile: prod
+
+    Infocert:
+      file: classpath:metadata/idp/infocert-metadata.xml
+      name: Infocert ID
+      imageUrl: res/img/spid-idp-infocertid.png
+      entityId: https://identity.infocert.it
+      postURL: https://identity.infocert.it/spid/samlsso
+      profile: prod
+
+    Lepida:
+      file: classpath:metadata/idp/lepida-metadata.xml
+      name: Lepida ID
+      imageUrl: res/img/spid-idp-lepidaid.png
+      entityId: https://id.lepida.it/idp/shibboleth
+      postURL: https://id.lepida.it/idp/profile/SAML2/POST/SSO
+      profile: prod
+
+    Namirial:
+      file: classpath:metadata/idp/namirial-metadata.xml
+      name: Namirial ID
+      imageUrl: res/img/spid-idp-namirialid.png
+      entityId: https://idp.namirialtsp.com/idp
+      postURL: https://idp.namirialtsp.com/idp/profile/SAML2/POST/SSO
+      profile: prod
+
+    Poste:
+      file: classpath:metadata/idp/poste-metadata.xml
+      name: Poste ID
+      imageUrl: res/img/spid-idp-posteid.png
+      entityId: https://posteid.poste.it
+      postURL: https://posteid.poste.it/jod-fs/ssoservicepost
+      profile: prod
+
+    Register:
+      file: classpath:metadata/idp/register-metadata.xml
+      name: SpidItalia
+      imageUrl: res/img/spid-idp-spiditalia.png
+      entityId: https://spid.register.it
+      postURL: https://spid.register.it/login/sso
+      profile: prod
+
+    Sielte:
+      file: classpath:metadata/idp/sielte-metadata.xml
+      name: Sielte id
+      imageUrl: res/img/spid-idp-sielteid.png
+      entityId: https://identity.sieltecloud.it
+      postURL: https://identity.sieltecloud.it/simplesaml/saml2/idp/SSO.php
+      profile: prod
+
+    Tim:
+      file: classpath:metadata/idp/telecom-metadata.xml
+      name: TIM id
+      imageUrl: res/img/spid-idp-timid.png
+      entityId: https://login.id.tim.it/affwebservices/public/saml2sso
+      postURL: https://login.id.tim.it/affwebservices/public/saml2sso
+      profile: prod
+
+  keystore:
+    path: classpath:keystore/cert.pkcs12
+    password: changeit
+    alias: 1
+
+  attributeConsumingServiceIndex: 0
+  assertionConsumerServiceIndex: 0
+  issuer:
+    entityId: https://selezionionline.cnr.it
+    name: Consiglio Nazionale delle Ricerche
+
+  destination: https://selezionionline.cnr.it/jconon/spid/send-response
+  enable: false

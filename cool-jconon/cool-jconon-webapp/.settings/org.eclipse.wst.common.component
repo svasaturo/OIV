@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
+    <wb-module deploy-name="jconon">
+                
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="cool-jconon-webapp-resources-4.3.20-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-jconon-webapp-resources/cool-jconon-webapp-resources">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-jconon-backend-4.3.20-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-jconon-backend/cool-jconon-backend">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-common-web-3.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-common-web/cool-common-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-common-rest-3.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-common-rest/cool-common-rest">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-common-core-3.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-common-core/cool-common-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-common-api-3.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-common-api/cool-common-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-bulkinfo-3.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-bulkinfo/cool-bulkinfo">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-view-3.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-view/cool-view">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-common-web-js-3.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-common-web-js/cool-common-web-js">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-jconon-print-4.3.20-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-jconon-print/cool-jconon-print">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-jconon-remote-4.3.20-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-jconon-remote/cool-jconon-remote">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cool-jconon-spid-4.3.20-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cool-jconon-spid/cool-jconon-spid">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                
+        <property name="context-root" value="jconon"/>
+                
+        <property name="java-output-path" value="/cool-jconon-webapp/target/classes"/>
+                
+        <property name="component.exclusion.patterns" value="**/js/ws/**/*.js,**/js/cnr/**/*.js,**/js/thirdparty/**/*.js,**/*.css"/>
+            
+    </wb-module>
+    
+</project-modules>
