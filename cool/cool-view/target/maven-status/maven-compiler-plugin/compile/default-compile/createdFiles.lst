@@ -1,0 +1,10 @@
+it/cnr/bulkinfo/BulkInfoImpl$FieldPropertySet.class
+it/cnr/bulkinfo/BulkInfoImpl$FieldProperty.class
+it/cnr/bulkinfo/exception/BulkinfoNameException.class
+it/cnr/bulkinfo/exception/BulkinfoKindException.class
+it/cnr/bulkinfo/BulkInfoService.class
+it/cnr/bulkinfo/BulkInfoImpl.class
+it/cnr/bulkinfo/BulkInfoSerializer.class
+it/cnr/bulkinfo/exception/BulkInfoNotFoundException.class
+it/cnr/bulkinfo/exception/BulkInfoException.class
+it/cnr/bulkinfo/BulkInfo.class

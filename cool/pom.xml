@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2019  Consiglio Nazionale delle Ricerche
+  ~
+  ~     This program is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU Affero General Public License as
+  ~     published by the Free Software Foundation, either version 3 of the
+  ~     License, or (at your option) any later version.
+  ~
+  ~     This program is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU Affero General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU Affero General Public License
+  ~     along with this program.  If not, see <https://www.gnu.org/licenses />.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>cool-parent</artifactId>
+  <groupId>it.cnr.si.cool</groupId>
+  <version>3.2.5</version>
+  <name>Cool Platform</name>
+  <packaging>pom</packaging>
+
+  <parent>
+    <artifactId>archetype</artifactId>
+    <groupId>it.cnr.si</groupId>
+    <version>1.0.12</version>
+  </parent>
+
+  <properties>
+    <opencmis.version>1.1.0</opencmis.version>
+    <spring.version>5.1.6.RELEASE</spring.version>
+    <jslint4java.version>2.0.2</jslint4java.version>
+    <junit.version>5.4.2</junit.version>
+    <slf4j.version>1.7.21</slf4j.version>
+    <dom4j.version>1.6</dom4j.version>
+    <jaxen.version>1.1.4</jaxen.version>
+    <mail.version>1.5.6</mail.version>
+    <cnr.rest.version>1.0.1</cnr.rest.version>
+    <servlet.version>3.1.0</servlet.version>
+  </properties>
+
+  <modules>
+    <module>cool-common</module>
+    <module>cool-bulkinfo</module>
+    <module>cool-view</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>validators</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-pmd-plugin</artifactId>
+            <version>3.6</version>
+            <configuration>
+              <targetJdk>${java.version}</targetJdk>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>pmd</goal>
+                  <goal>check</goal>
+                  <goal>cpd</goal>
+                  <!-- TODO: cpd-check -->
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>com.googlecode.jslint4java</groupId>
+            <artifactId>jslint4java-maven-plugin</artifactId>
+            <version>${jslint4java.version}</version>
+            <executions>
+              <execution>
+                <id>lint</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>lint</goal>
+                </goals>
+                <configuration>
+                  <failOnError>true</failOnError>
+                  <options>
+                    <indent>2</indent>
+                    <!-- predefined -->
+                    <predef>define,require,sitedata,model,cmisSession,cmisService,args,url,childPages,params,cnrutils,cache,status,Xsd2Json,search,utils,person</predef>
+                    <!-- tolerate ++ -->
+                    <plusplus>true</plusplus>
+                    <!-- dangling _ in identifiers -->
+                    <nomen>true</nomen>
+                    <!-- assume browser -->
+                    <browser>true</browser>
+                    <!-- allow insecure . and [^...] in /RegExp/ -->
+                    <regexp>true</regexp>
+                    <!-- eval is evil, do not abuse! -->
+                    <evil>true</evil>
+                  </options>
+                  <sourceFolders>
+                    <sourceFolder>
+                      .
+                    </sourceFolder>
+                  </sourceFolders>
+                  <excludes>
+                    <exclude>**/target/**</exclude>
+                    <exclude>**/thirdparty/**</exclude>
+                    <exclude>**/Scripts/wfContatoriStorico**</exclude>
+                    <exclude>**/src/main/config/**</exclude>
+                    <exclude>**/src/main/js/**</exclude>
+                    <exclude>**/src/test/**</exclude>
+                    <exclude>**/cnr/cool/permissions/**</exclude>
+                    <exclude>**/cnr/cnr.validator.js</exclude>
+                    <!-- webscript copiati da alfresco -->
+                    <exclude>**/nodes/permissions.*.js</exclude>
+                  </excludes>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>2.1.8.RELEASE</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.0</version>
+      </plugin>
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>yuicompressor-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compress</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <nosuffix>true</nosuffix>
+          <nocompress>true</nocompress>
+          <includes>
+            <!-- every inclusion should be added also to maven-war-plugin configuration (property warSourceExcludes) in cool-webapp\pom.xml -->
+            <include>**/js/ws/**</include>
+            <include>**/js/cnr/**</include>
+            <include>**/js/thirdparty/**</include>
+            <include>**/*.css</include>
+          </includes>
+          <excludes>
+            <exclude>**/worker-javascript.js</exclude>
+            <exclude>**/ckeditor/**</exclude>
+            <exclude>**/*-original.js</exclude>
+            <exclude>**/select2/img/**</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.lesscss</groupId>
+        <artifactId>lesscss-maven-plugin</artifactId>
+        <version>1.7.0.1.1</version>
+        <configuration>
+          <outputDirectory>${project.build.directory}/classes/META-INF/css</outputDirectory>
+          <nodeExecutable>${node.path}</nodeExecutable>
+        </configuration>
+      </plugin>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.10.3</version>
+          <configuration>
+              <additionalparam>-Xdoclint:none</additionalparam>
+          </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <licenses>
+    <license>
+      <name>GNU AFFERO GENERAL PUBLIC LICENSE</name>
+      <url>https://www.gnu.org/licenses/agpl-3.0.html</url>
+      <comments>
+        Copyright (C) 2019 Consiglio Nazionale delle Ricerche
+
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU Affero General Public License as
+        published by the Free Software Foundation, either version 3 of the
+        License, or (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU Affero General Public License for more details.
+
+        You should have received a copy of the GNU Affero General Public License
+        along with this program.  If not, see https://www.gnu.org/licenses/
+      </comments>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>marco.spasiano</id>
+      <name>Marco Spasiano</name>
+      <email>marco.spasiano@cnr.it</email>
+      <organization>Consiglio Nazionale delle Ricerche</organization>
+      <organizationUrl>http://www.cnr.it</organizationUrl>
+      <roles>
+        <role>project lead</role>
+        <role>architet</role>
+        <role>developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>francesco.uliana</id>
+      <name>Francesco Uliana</name>
+      <email>francesco@uliana.it</email>
+      <roles>
+        <role>project lead</role>
+        <role>architet</role>
+        <role>developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>raffaele.pagano</id>
+      <name>Raffaele Pagano</name>
+      <email>raffaele.pagano@cnr.it</email>
+      <organization>Consiglio Nazionale delle Ricerche</organization>
+      <organizationUrl>http://www.cnr.it</organizationUrl>
+      <roles>
+          <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:ssh://git@git.si.cnr.it/documentale/cool.git</connection>
+    <developerConnection>scm:git:ssh://git@git.si.cnr.it/documentale/cool.git</developerConnection>
+    <tag>3.2.5</tag>
+  </scm>
+</project>
