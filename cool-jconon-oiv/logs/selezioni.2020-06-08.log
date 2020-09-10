@@ -1,0 +1,821 @@
+2020-06-08 10:58:43,484 INFO  [main] CoolJcononApplication: Starting CoolJcononApplication on docker with PID 5625 (/home/docker/.m2/repository/it/cnr/si/cool/jconon/cool-jconon-backend/4.3.20-SNAPSHOT/cool-jconon-backend-4.3.20-SNAPSHOT.jar started by docker in /home/docker/git/cool-jconon-oiv)
+2020-06-08 10:58:43,503 INFO  [main] CoolJcononApplication: The following profiles are active: fp
+2020-06-08 10:58:51,656 INFO  [main] AjpConfiguration: set ajp timeout to 120000
+2020-06-08 10:58:52,525 INFO  [main] AjpConfiguration$1: New cache size (KB): 40960
+2020-06-08 10:58:52,529 INFO  [main] TomcatWebServer: Tomcat initialized with port(s): 8080 (http) 8009 (http)
+2020-06-08 10:58:52,586 INFO  [main] Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-08 10:58:52,700 INFO  [main] AjpNioProtocol: Initializing ProtocolHandler ["ajp-nio-8009"]
+2020-06-08 10:58:52,749 INFO  [main] StandardService: Starting service [Tomcat]
+2020-06-08 10:58:52,750 INFO  [main] StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-06-08 10:58:53,041 INFO  [main] [/]: Initializing Spring embedded WebApplicationContext
+2020-06-08 10:58:53,041 INFO  [main] ContextLoader: Root WebApplicationContext: initialization completed in 9145 ms
+2020-06-08 10:58:54,987 INFO  [main] CacheConfiguration: Starting HazelcastCacheManager
+2020-06-08 10:58:55,056 INFO  [main] CacheConfiguration: using mancenter: http://127.0.0.1
+2020-06-08 10:58:55,064 INFO  [main] CacheConfiguration: TCP members: 127.0.0.1
+2020-06-08 10:58:55,140 INFO  [main] CacheConfiguration: time to live: 86400
+2020-06-08 10:58:55,406 INFO  [main] DefaultAddressPicker: [LOCAL] [dev] [3.7.2] Interfaces is disabled, trying to pick one address from TCP-IP config addresses: [127.0.0.1]
+2020-06-08 10:58:55,432 INFO  [main] DefaultAddressPicker: [LOCAL] [dev] [3.7.2] Picked [127.0.0.1]:5601, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5601], bind any local is true
+2020-06-08 10:58:55,483 INFO  [main] system: [127.0.0.1]:5601 [dev] [3.7.2] Hazelcast 3.7.2 (20161004 - 540b01c) starting at [127.0.0.1]:5601
+2020-06-08 10:58:55,493 INFO  [main] system: [127.0.0.1]:5601 [dev] [3.7.2] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
+2020-06-08 10:58:55,493 INFO  [main] system: [127.0.0.1]:5601 [dev] [3.7.2] Configured Hazelcast Serialization version : 1
+2020-06-08 10:58:56,220 INFO  [main] BackpressureRegulator: [127.0.0.1]:5601 [dev] [3.7.2] Backpressure is disabled
+2020-06-08 10:58:57,882 INFO  [main] Node: [127.0.0.1]:5601 [dev] [3.7.2] Creating TcpIpJoiner
+2020-06-08 10:58:57,891 INFO  [main] LifecycleService: [127.0.0.1]:5601 [dev] [3.7.2] [127.0.0.1]:5601 is STARTING
+2020-06-08 10:58:58,356 INFO  [main] OperationExecutorImpl: [127.0.0.1]:5601 [dev] [3.7.2] Starting 2 partition threads
+2020-06-08 10:58:58,362 INFO  [main] OperationExecutorImpl: [127.0.0.1]:5601 [dev] [3.7.2] Starting 3 generic threads (1 dedicated for priority tasks)
+2020-06-08 10:58:58,377 INFO  [main] NonBlockingIOThreadingModel: [127.0.0.1]:5601 [dev] [3.7.2] TcpIpConnectionManager configured with Non Blocking IO-threading model: 3 input threads and 3 output threads
+2020-06-08 10:58:58,450 INFO  [main] TcpIpJoiner: [127.0.0.1]:5601 [dev] [3.7.2] 
+
+
+Members [1] {
+	Member [127.0.0.1]:5601 - 776944b2-6b57-4518-8ea4-73e8fdf8ee75 this
+}
+
+2020-06-08 10:58:58,583 INFO  [main] ManagementService: [127.0.0.1]:5601 [dev] [3.7.2] Hazelcast JMX agent enabled.
+2020-06-08 10:58:58,746 INFO  [main] LifecycleService: [127.0.0.1]:5601 [dev] [3.7.2] [127.0.0.1]:5601 is STARTED
+2020-06-08 10:58:58,773 INFO  [main] ManagementCenterService: [127.0.0.1]:5601 [dev] [3.7.2] Hazelcast will connect to Hazelcast Management Center on address: 
+http://127.0.0.1
+2020-06-08 10:58:59,319 INFO  [hz.jconon.MC.State.Sender] PartitionStateManager: [127.0.0.1]:5601 [dev] [3.7.2] Initializing cluster partition table arrangement...
+2020-06-08 10:58:59,509 INFO  [hz.jconon.MC.Task.Poller] ManagementCenterService: [127.0.0.1]:5601 [dev] [3.7.2] Failed to pull tasks from management center
+2020-06-08 10:59:00,477 INFO  [main] [/]: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+2020-06-08 10:59:01,132 INFO  [main] VersionService: profilo: SVILUPPO
+2020-06-08 10:59:01,133 INFO  [main] VersionService: versione: 0.0
+2020-06-08 10:59:01,328 WARN  [main] FunzionePubblicaConfiguration: overriding language: it
+2020-06-08 10:59:01,353 WARN  [main] RRDService: development mode, avoid scan document paths
+2020-06-08 10:59:01,765 INFO  [main] CacheRepository: Try to connect to repository base url: http://localhost:9080/alfresco/
+2020-06-08 10:59:01,792 INFO  [main] CmisAuthRepository: creating a new admin session
+2020-06-08 10:59:02,162 WARN  [hz.jconon.MC.State.Sender] ManagementCenterService: [127.0.0.1]:5601 [dev] [3.7.2] Failed to send response, responseCode:502 url:http://127.0.0.1/collector.do
+2020-06-08 10:59:11,261 INFO  [main] JcononConfiguration: loading i18n [i18n.cool-jconon, pages.call.call, pages.call.convocazione]
+2020-06-08 10:59:11,265 WARN  [main] QueueService: unneeded constructor injection - its only purpose is to define bean initialization order. Injected: it.cnr.cool.cmis.service.RRDService it.cnr.cool.service.I18nServiceLocation it.cnr.cool.service.I18nServiceLocation
+2020-06-08 10:59:11,594 INFO  [main] CmisAuthRepository: creating a new admin session
+2020-06-08 10:59:12,098 INFO  [main] SiperService: cache sedi-siper timeToLive: 86400
+2020-06-08 10:59:15,225 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'validator-metadata.xml'
+2020-06-08 10:59:15,226 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'validator-metadata.xml' will occur on '2020-06-08T11:59:15.131Z' ('2020-06-08T13:59:15.131+02:00' local time)
+2020-06-08 10:59:16,090 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'intesa-metadata.xml'
+2020-06-08 10:59:16,094 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'intesa-metadata.xml' will occur on '2020-06-08T11:59:16.027Z' ('2020-06-08T13:59:16.027+02:00' local time)
+2020-06-08 10:59:16,158 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'test-metadata.xml'
+2020-06-08 10:59:16,166 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'test-metadata.xml' will occur on '2020-06-08T11:59:16.152Z' ('2020-06-08T13:59:16.152+02:00' local time)
+2020-06-08 10:59:16,298 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'namirial-metadata.xml'
+2020-06-08 10:59:16,299 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'namirial-metadata.xml' will occur on '2020-06-08T11:59:16.247Z' ('2020-06-08T13:59:16.247+02:00' local time)
+2020-06-08 10:59:16,339 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'register-metadata.xml'
+2020-06-08 10:59:16,355 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'register-metadata.xml' will occur on '2020-06-08T11:59:16.330Z' ('2020-06-08T13:59:16.330+02:00' local time)
+2020-06-08 10:59:16,398 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'sielte-metadata.xml'
+2020-06-08 10:59:16,399 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'sielte-metadata.xml' will occur on '2020-06-08T11:59:16.379Z' ('2020-06-08T13:59:16.379+02:00' local time)
+2020-06-08 10:59:16,432 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'telecom-metadata.xml'
+2020-06-08 10:59:16,444 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'telecom-metadata.xml' will occur on '2020-06-08T11:59:16.416Z' ('2020-06-08T13:59:16.416+02:00' local time)
+2020-06-08 10:59:16,488 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'aruba-metadata.xml'
+2020-06-08 10:59:16,512 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'aruba-metadata.xml' will occur on '2020-06-08T11:59:16.473Z' ('2020-06-08T13:59:16.473+02:00' local time)
+2020-06-08 10:59:16,596 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'lepida-metadata.xml'
+2020-06-08 10:59:16,599 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'lepida-metadata.xml' will occur on '2020-06-08T11:59:16.580Z' ('2020-06-08T13:59:16.580+02:00' local time)
+2020-06-08 10:59:16,650 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'infocert-metadata.xml'
+2020-06-08 10:59:16,673 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'infocert-metadata.xml' will occur on '2020-06-08T11:59:16.638Z' ('2020-06-08T13:59:16.638+02:00' local time)
+2020-06-08 10:59:16,747 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'poste-metadata.xml'
+2020-06-08 10:59:16,749 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'poste-metadata.xml' will occur on '2020-06-08T11:59:16.709Z' ('2020-06-08T13:59:16.709+02:00' local time)
+2020-06-08 10:59:16,775 INFO  [main] FunzionePubblicaConfiguration: loading i18n i18n.cool-jconon-fp
+2020-06-08 10:59:18,260 INFO  [main] ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 10:59:19,556 INFO  [main] UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 7af166c1-9857-4440-a603-b6333d20d968
+
+2020-06-08 10:59:19,779 INFO  [main] DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68491703, org.springframework.security.web.context.SecurityContextPersistenceFilter@1957e207, org.springframework.security.web.header.HeaderWriterFilter@923fdc3, org.springframework.security.web.authentication.logout.LogoutFilter@55cc183b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3720aa4b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47fa2da5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13794647, org.springframework.security.web.session.SessionManagementFilter@3aa97749, org.springframework.security.web.access.ExceptionTranslationFilter@29c20ac6]
+2020-06-08 10:59:19,854 INFO  [main] ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020-06-08 10:59:20,830 INFO  [main] EndpointLinksResolver: Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-06-08 10:59:21,140 INFO  [main] Http11NioProtocol: Starting ProtocolHandler ["http-nio-8080"]
+2020-06-08 10:59:21,243 INFO  [main] AjpNioProtocol: Starting ProtocolHandler ["ajp-nio-8009"]
+2020-06-08 10:59:23,059 INFO  [main] TomcatWebServer: Tomcat started on port(s): 8080 (http) 8009 (http) with context path ''
+2020-06-08 10:59:23,064 INFO  [main] CoolJcononApplication: Started CoolJcononApplication in 42.222 seconds (JVM running for 88.747)
+2020-06-08 11:00:28,980 INFO  [http-nio-8080-exec-1] [/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 11:00:28,981 INFO  [http-nio-8080-exec-1] DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-06-08 11:00:29,018 INFO  [http-nio-8080-exec-1] DispatcherServlet: Completed initialization in 34 ms
+2020-06-08 11:00:29,384 WARN  [http-nio-8080-exec-1] Providers: A provider org.apache.tools.ant.taskdefs.Copy registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.tools.ant.taskdefs.Copy will be ignored. 
+2020-06-08 11:00:29,385 WARN  [http-nio-8080-exec-1] Providers: A provider net.sf.jasperreports.engine.export.Cut registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider net.sf.jasperreports.engine.export.Cut will be ignored. 
+2020-06-08 11:00:30,461 INFO  [http-nio-8080-exec-1] CmisAuthRepository: creating binding session for ticket null
+2020-06-08 11:00:30,509 INFO  [http-nio-8080-exec-1] CmisAuthRepository: creating a new admin session
+2020-06-08 11:00:30,766 WARN  [http-nio-8080-exec-1] Page: RBAC: guest unauthorized to access page my-applications
+2020-06-08 11:00:31,001 INFO  [http-nio-8080-exec-1] PageService: User: guest with IP: 127.0.0.1 Path: GET /page/login
+2020-06-08 11:00:31,439 INFO  [http-nio-8080-exec-1] I18nRepository: 1173 properties loaded for locale it
+2020-06-08 11:00:33,868 INFO  [http-nio-8080-exec-1] I18n: actual language: it
+2020-06-08 11:00:36,493 INFO  [http-nio-8080-exec-3] CacheRepository: Try to connect to repository base url: http://localhost:9080/alfresco/
+2020-06-08 11:00:36,648 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: F:jconon_application:folder
+2020-06-08 11:00:38,170 WARN  [http-nio-8080-exec-9] WebComponent: A servlet request to the URI http://localhost:8080/rest/security/login contains form parameters in the request body but the request body has been consumed by the servlet or a servlet filter accessing the request parameters. Only resource methods using @FormParam will work as expected. Resource methods consuming the request body by other means will not work as expected.
+2020-06-08 11:00:38,442 INFO  [http-nio-8080-exec-9] CmisAuthRepository: creating binding session for ticket TICKET_2a61cfd16f8f6200baacaa66bdc85c195fbe6c13
+2020-06-08 11:00:38,446 INFO  [http-nio-8080-exec-9] CmisAuthRepository: user not cached for ticket TICKET_2a61cfd16f8f6200baacaa66bdc85c195fbe6c13
+2020-06-08 11:00:38,863 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condanne_penali_rapporto_lavoro
+2020-06-08 11:00:38,878 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condanne_penali
+2020-06-08 11:00:38,963 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condanne_penali
+2020-06-08 11:00:39,028 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condanne_penali_required
+2020-06-08 11:00:39,069 INFO  [http-nio-8080-exec-9] CmisAuthRepository: add to cache user admin to the cache having ticket = TICKET_2a61cfd16f8f6200baacaa66bdc85c195fbe6c13
+2020-06-08 11:00:39,083 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: F:jconon_application:folder
+2020-06-08 11:00:39,127 INFO  [http-nio-8080-exec-6] CMISService: User: admin with ticket: TICKET_2a61cfd16f8f6200baacaa66bdc85c195fbe6c13 IP: 127.0.0.1 Path: GET /page/my-applications
+2020-06-08 11:00:39,141 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_area_amministrativa
+2020-06-08 11:00:39,153 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_area_amministrativa
+2020-06-08 11:00:39,183 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_esperienza
+2020-06-08 11:00:39,198 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_esperienza
+2020-06-08 11:00:39,230 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_dottorato_not_required
+2020-06-08 11:00:39,256 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_dottorato_not_required
+2020-06-08 11:00:39,276 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_dottorato
+2020-06-08 11:00:39,281 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_dottorato
+2020-06-08 11:00:39,306 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_anzianita_servizio
+2020-06-08 11:00:39,314 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_anzianita_servizio
+2020-06-08 11:00:39,344 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_laurea
+2020-06-08 11:00:39,355 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_laurea
+2020-06-08 11:00:39,473 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_idoneita_fisica
+2020-06-08 11:00:39,506 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_idoneita_fisica
+2020-06-08 11:00:39,547 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_altri_incarichi_oiv
+2020-06-08 11:00:39,552 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_altri_incarichi_oiv
+2020-06-08 11:00:39,595 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspects
+2020-06-08 11:00:39,600 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspects
+2020-06-08 11:00:39,626 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: cmis:secondary
+2020-06-08 11:00:39,634 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: cmis:secondary
+2020-06-08 11:00:39,688 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizio_altra_attivita
+2020-06-08 11:00:39,705 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizio_altra_attivita
+2020-06-08 11:00:39,768 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizio_altre_amministrazioniWithoutDirettore
+2020-06-08 11:00:39,796 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizio_altre_amministrazioniWithoutDirettore
+2020-06-08 11:00:39,828 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizio_altre_amministrazioni
+2020-06-08 11:00:39,841 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizio_altre_amministrazioni
+2020-06-08 11:00:39,875 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_titolo_preferenza_posti
+2020-06-08 11:00:39,884 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_titolo_preferenza_posti
+2020-06-08 11:00:39,909 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_altre_borse_studio
+2020-06-08 11:00:39,922 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_altre_borse_studio
+2020-06-08 11:00:39,949 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_diversamente_abile
+2020-06-08 11:00:39,965 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_diversamente_abile
+2020-06-08 11:00:40,014 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_lingua_italiana
+2020-06-08 11:00:40,029 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_lingua_italiana
+2020-06-08 11:00:40,055 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_categorie_riservatarie_art18
+2020-06-08 11:00:40,059 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_categorie_riservatarie_art18
+2020-06-08 11:00:40,110 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_laurea_not_required
+2020-06-08 11:00:40,130 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_laurea_not_required
+2020-06-08 11:00:40,198 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_iscrizione_liste_elettorali
+2020-06-08 11:00:40,214 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_iscrizione_liste_elettorali
+2020-06-08 11:00:40,237 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_settore_scientifico_tecnologico
+2020-06-08 11:00:40,253 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_settore_scientifico_tecnologico
+2020-06-08 11:00:40,343 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_ente_comparto_universita_appartenenza
+2020-06-08 11:00:40,365 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_ente_comparto_universita_appartenenza
+2020-06-08 11:00:40,384 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_lista_disoccupazione_art1
+2020-06-08 11:00:40,387 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_lista_disoccupazione_art1
+2020-06-08 11:00:40,464 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_sede
+2020-06-08 11:00:40,482 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_sede
+2020-06-08 11:00:40,511 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_situazione_lavorativa
+2020-06-08 11:00:40,538 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_situazione_lavorativa
+2020-06-08 11:00:40,593 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_area_tecnica
+2020-06-08 11:00:40,613 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_area_tecnica
+2020-06-08 11:00:40,651 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_area_scientifica_not_required
+2020-06-08 11:00:40,657 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_area_scientifica_not_required
+2020-06-08 11:00:40,675 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_area_scientifica
+2020-06-08 11:00:40,697 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_area_scientifica
+2020-06-08 11:00:40,745 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_h_index
+2020-06-08 11:00:40,761 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_h_index
+2020-06-08 11:00:40,801 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_diploma
+2020-06-08 11:00:40,816 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_diploma
+2020-06-08 11:00:40,863 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_ente_appartenenza
+2020-06-08 11:00:40,876 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_ente_appartenenza
+2020-06-08 11:00:40,911 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condizione_esclusione
+2020-06-08 11:00:40,918 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condizione_esclusione
+2020-06-08 11:00:40,943 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_licenziamento_disciplinare
+2020-06-08 11:00:40,947 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_licenziamento_disciplinare
+2020-06-08 11:00:40,994 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_sanzione_disciplinare
+2020-06-08 11:00:41,019 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_sanzione_disciplinare
+2020-06-08 11:00:41,027 INFO  [http-nio-8080-exec-1] CMISService: User: admin with ticket: TICKET_2a61cfd16f8f6200baacaa66bdc85c195fbe6c13 IP: 127.0.0.1 Path: GET /common
+2020-06-08 11:00:41,050 INFO  [http-nio-8080-exec-5] I18n: actual language: it
+2020-06-08 11:00:41,098 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_anzianita_livello
+2020-06-08 11:00:41,127 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_anzianita_livello
+2020-06-08 11:00:41,183 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condanne_contabili
+2020-06-08 11:00:41,192 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condanne_contabili
+2020-06-08 11:00:41,280 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_struttura_appartenenza
+2020-06-08 11:00:41,341 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_struttura_appartenenza
+2020-06-08 11:00:41,440 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_titolo_riserva_posti
+2020-06-08 11:00:41,476 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_titolo_riserva_posti
+2020-06-08 11:00:41,540 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_atto_interruttivo_anzianita
+2020-06-08 11:00:41,576 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_atto_interruttivo_anzianita
+2020-06-08 11:00:41,591 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_atto_interruttivo_anzianita
+2020-06-08 11:00:41,661 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_possesso_cittadinanza_italiana
+2020-06-08 11:00:41,677 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_possesso_cittadinanza_italiana
+2020-06-08 11:00:41,700 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_possesso_cittadinanza_italiana
+2020-06-08 11:00:41,738 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_possesso_cittadinanza_italiana
+2020-06-08 11:00:41,847 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_nulla_osta
+2020-06-08 11:00:41,866 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_nulla_osta
+2020-06-08 11:00:41,897 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_nulla_osta
+2020-06-08 11:00:41,968 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_sentenza_giudicato
+2020-06-08 11:00:41,970 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_sentenza_giudicato
+2020-06-08 11:00:41,982 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_sentenza_giudicato
+2020-06-08 11:00:42,078 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_specializzazione
+2020-06-08 11:00:42,093 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_specializzazione
+2020-06-08 11:00:42,133 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_specializzazione
+2020-06-08 11:00:42,149 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_specializzazione
+2020-06-08 11:00:42,197 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_decaduto_altro_impiego
+2020-06-08 11:00:42,206 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_decaduto_altro_impiego
+2020-06-08 11:00:42,213 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_decaduto_altro_impiego
+2020-06-08 11:00:42,242 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_lingue
+2020-06-08 11:00:42,272 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_lingue
+2020-06-08 11:00:42,283 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_lingue
+2020-06-08 11:00:42,303 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_incompatibilita
+2020-06-08 11:00:42,327 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_incompatibilita
+2020-06-08 11:00:42,328 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_incompatibilita
+2020-06-08 11:00:42,390 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_esperienza_gestionale
+2020-06-08 11:00:42,392 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_esperienza_gestionale
+2020-06-08 11:00:42,404 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_esperienza_gestionale
+2020-06-08 11:00:42,405 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_esperienza_gestionale
+2020-06-08 11:00:42,425 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizioCNR
+2020-06-08 11:00:42,425 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizioCNR
+2020-06-08 11:00:42,432 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizioCNR
+2020-06-08 11:00:42,433 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizioCNR
+2020-06-08 11:00:42,455 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_informatica_avanzata
+2020-06-08 11:00:42,455 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_informatica_avanzata
+2020-06-08 11:00:42,490 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_informatica_avanzata
+2020-06-08 11:00:42,490 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_informatica_avanzata
+2020-06-08 11:00:42,511 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_possesso_requisiti
+2020-06-08 11:00:42,514 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_possesso_requisiti
+2020-06-08 11:00:42,520 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_possesso_requisiti
+2020-06-08 11:00:42,521 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_possesso_requisiti
+2020-06-08 11:00:42,545 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_precedente_servizio_altre_amministrazioni
+2020-06-08 11:00:42,547 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_precedente_servizio_altre_amministrazioni
+2020-06-08 11:00:42,549 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_precedente_servizio_altre_amministrazioni
+2020-06-08 11:00:42,560 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_precedente_servizio_altre_amministrazioni
+2020-06-08 11:00:42,569 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_patente_guida
+2020-06-08 11:00:42,570 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_patente_guida
+2020-06-08 11:00:42,586 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_patente_guida
+2020-06-08 11:00:42,616 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_obblighi_militari
+2020-06-08 11:00:42,618 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_obblighi_militari
+2020-06-08 11:00:42,623 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_obblighi_militari
+2020-06-08 11:00:42,657 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_precedente_incarico_oiv
+2020-06-08 11:00:42,660 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_precedente_incarico_oiv
+2020-06-08 11:00:42,669 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_precedente_incarico_oiv
+2020-06-08 11:00:42,695 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_diploma_not_required
+2020-06-08 11:00:42,699 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_diploma_not_required
+2020-06-08 11:00:42,700 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_diploma_not_required
+2020-06-08 11:00:42,708 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_diploma_not_required
+2020-06-08 11:00:42,747 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_settore_scientifico_tecnologico_not_required
+2020-06-08 11:00:42,755 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_settore_scientifico_tecnologico_not_required
+2020-06-08 11:00:42,764 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_settore_scientifico_tecnologico_not_required
+2020-06-08 11:00:42,765 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_settore_scientifico_tecnologico_not_required
+2020-06-08 11:00:42,786 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_superato_periodo_prova
+2020-06-08 11:00:42,790 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_superato_periodo_prova
+2020-06-08 11:00:42,791 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_superato_periodo_prova
+2020-06-08 11:00:42,812 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_godimento_diritti
+2020-06-08 11:00:42,816 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_godimento_diritti
+2020-06-08 11:00:42,819 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_godimento_diritti
+2020-06-08 11:00:42,839 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_precedente_servizio_cnr
+2020-06-08 11:00:42,844 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_precedente_servizio_cnr
+2020-06-08 11:00:42,848 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_precedente_servizio_cnr
+2020-06-08 11:00:42,874 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizioCNRWithoutDirettore
+2020-06-08 11:00:42,883 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizioCNRWithoutDirettore
+2020-06-08 11:00:42,898 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizioCNRWithoutDirettore
+2020-06-08 11:00:42,910 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_lista_disoccupazione_art18
+2020-06-08 11:00:42,911 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_lista_disoccupazione_art18
+2020-06-08 11:00:42,951 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_lista_disoccupazione_art18
+2020-06-08 11:00:42,952 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_lista_disoccupazione_art18
+2020-06-08 11:00:42,978 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_alta_qualificazione
+2020-06-08 11:00:42,991 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_alta_qualificazione
+2020-06-08 11:00:43,028 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_alta_qualificazione
+2020-06-08 11:00:43,049 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_vincolo_sede
+2020-06-08 11:00:43,053 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_vincolo_sede
+2020-06-08 11:00:43,067 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_vincolo_sede
+2020-06-08 11:00:43,095 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_inglese_informatica
+2020-06-08 11:00:43,096 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_inglese_informatica
+2020-06-08 11:00:43,101 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_inglese_informatica
+2020-06-08 11:00:43,102 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_inglese_informatica
+2020-06-08 11:00:43,121 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_residenza_generica
+2020-06-08 11:00:43,123 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_residenza_generica
+2020-06-08 11:00:43,124 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_residenza_generica
+2020-06-08 11:00:43,124 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_residenza_generica
+2020-06-08 11:00:43,152 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_esperienza_professionale
+2020-06-08 11:00:43,157 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_esperienza_professionale
+2020-06-08 11:00:43,166 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_esperienza_professionale
+2020-06-08 11:00:43,177 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_destituito_altro_impiego
+2020-06-08 11:00:43,181 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_destituito_altro_impiego
+2020-06-08 11:00:43,183 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_destituito_altro_impiego
+2020-06-08 11:00:43,202 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_rimosso_incarico_oiv
+2020-06-08 11:00:43,203 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_rimosso_incarico_oiv
+2020-06-08 11:00:43,215 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_rimosso_incarico_oiv
+2020-06-08 11:00:43,228 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_nulla_osta_obbligatorio
+2020-06-08 11:00:43,240 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_nulla_osta_obbligatorio
+2020-06-08 11:00:43,241 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_nulla_osta_obbligatorio
+2020-06-08 11:00:43,263 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_magistrato_contabile
+2020-06-08 11:00:43,264 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_magistrato_contabile
+2020-06-08 11:00:43,286 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_possesso_cittadinanza
+2020-06-08 11:00:43,288 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_possesso_cittadinanza
+2020-06-08 11:00:43,288 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_possesso_cittadinanza
+2020-06-08 11:00:43,310 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_fascia_professionale_attribuita
+2020-06-08 11:00:43,317 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_fascia_professionale_attribuita
+2020-06-08 11:00:43,329 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_fascia_professionale_attribuita
+2020-06-08 11:00:43,354 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_godimento_diritti_ue
+2020-06-08 11:00:43,358 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_godimento_diritti_ue
+2020-06-08 11:00:43,360 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_godimento_diritti_ue
+2020-06-08 11:00:43,362 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_godimento_diritti_ue
+2020-06-08 11:00:43,414 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_ente_comparto_ricerca_appartenenza
+2020-06-08 11:00:43,420 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_ente_comparto_ricerca_appartenenza
+2020-06-08 11:00:43,421 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_ente_comparto_ricerca_appartenenza
+2020-06-08 11:00:43,458 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_anzianita_profilo
+2020-06-08 11:00:43,458 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_anzianita_profilo
+2020-06-08 11:00:43,468 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_anzianita_profilo
+2020-06-08 11:00:43,485 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_anzianita_profilo
+2020-06-08 11:00:43,494 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_incarichi_pubblici_apicali
+2020-06-08 11:00:43,495 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_incarichi_pubblici_apicali
+2020-06-08 11:00:43,513 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_incarichi_pubblici_apicali
+2020-06-08 11:00:43,522 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_inquadramento
+2020-06-08 11:00:43,526 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_inquadramento
+2020-06-08 11:00:43,531 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_inquadramento
+2020-06-08 11:00:43,548 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_categorie_riservatarie_art1
+2020-06-08 11:00:43,554 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_categorie_riservatarie_art1
+2020-06-08 11:00:43,563 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_categorie_riservatarie_art1
+2020-06-08 11:00:43,753 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condanne_penali_rapporto_lavoro
+2020-06-08 11:00:43,771 WARN  [http-nio-8080-exec-3] BulkInfoRepository: Type: P:jconon_application:aspect_condanne_penali_rapporto_lavoro not found!
+2020-06-08 11:00:43,797 INFO  [http-nio-8080-exec-3] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condanne_penali_required
+2020-06-08 11:00:43,813 WARN  [http-nio-8080-exec-3] BulkInfoRepository: Type: P:jconon_application:aspect_condanne_penali_required not found!
+2020-06-08 11:00:43,812 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condanne_penali_required
+2020-06-08 11:00:43,833 WARN  [http-nio-8080-exec-9] BulkInfoRepository: Type: P:jconon_application:aspect_condanne_penali_required not found!
+2020-06-08 11:00:50,130 ERROR [http-nio-8080-exec-3] ServerRuntime$Responder: An I/O error has occurred while writing a response message entity to the container output stream.
+org.glassfish.jersey.server.internal.process.MappableException: org.apache.catalina.connector.ClientAbortException: java.io.IOException: Pipe interrotta
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundWriteTo(MappableExceptionWrapperInterceptor.java:91)
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:163)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.writeTo(MessageBodyFactory.java:1135)
+	at org.glassfish.jersey.server.ServerRuntime$Responder.writeResponse(ServerRuntime.java:662)
+	at org.glassfish.jersey.server.ServerRuntime$Responder.processResponse(ServerRuntime.java:395)
+	at org.glassfish.jersey.server.ServerRuntime$Responder.process(ServerRuntime.java:385)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:280)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:97)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:394)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.catalina.connector.ClientAbortException: java.io.IOException: Pipe interrotta
+	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:351)
+	at org.apache.catalina.connector.OutputBuffer.flushByteBuffer(OutputBuffer.java:776)
+	at org.apache.catalina.connector.OutputBuffer.append(OutputBuffer.java:681)
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:386)
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:364)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:96)
+	at org.springframework.security.web.util.OnCommittedResponseWrapper$SaveContextServletOutputStream.write(OnCommittedResponseWrapper.java:639)
+	at org.springframework.security.web.util.OnCommittedResponseWrapper$SaveContextServletOutputStream.write(OnCommittedResponseWrapper.java:639)
+	at org.glassfish.jersey.servlet.internal.ResponseWriter$NonCloseableOutputStreamWrapper.write(ResponseWriter.java:325)
+	at org.glassfish.jersey.message.internal.CommittingOutputStream.write(CommittingOutputStream.java:224)
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream.write(WriterInterceptorExecutor.java:300)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator._flushBuffer(UTF8JsonGenerator.java:2085)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator._writeBytes(UTF8JsonGenerator.java:1173)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.writeFieldName(UTF8JsonGenerator.java:256)
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:725)
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:719)
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeFields(MapSerializer.java:722)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:643)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:33)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:319)
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1396)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:913)
+	at org.glassfish.jersey.jackson.internal.jackson.jaxrs.base.ProviderBase.writeTo(ProviderBase.java:648)
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.invokeWriteTo(WriterInterceptorExecutor.java:266)
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.aroundWriteTo(WriterInterceptorExecutor.java:251)
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:163)
+	at org.glassfish.jersey.server.internal.JsonWithPaddingInterceptor.aroundWriteTo(JsonWithPaddingInterceptor.java:109)
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:163)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundWriteTo(MappableExceptionWrapperInterceptor.java:85)
+	... 103 common frames omitted
+Caused by: java.io.IOException: Pipe interrotta
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:468)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:140)
+	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101)
+	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:152)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1261)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:793)
+	at org.apache.tomcat.util.net.SocketWrapperBase.writeBlocking(SocketWrapperBase.java:563)
+	at org.apache.tomcat.util.net.SocketWrapperBase.write(SocketWrapperBase.java:501)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.doWrite(Http11OutputBuffer.java:538)
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.doWrite(ChunkedOutputFilter.java:112)
+	at org.apache.coyote.http11.Http11OutputBuffer.doWrite(Http11OutputBuffer.java:190)
+	at org.apache.coyote.Response.doWrite(Response.java:601)
+	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:339)
+	... 136 common frames omitted
+2020-06-08 11:00:50,198 INFO  [http-nio-8080-exec-2] CMISService: User: admin with ticket: TICKET_2a61cfd16f8f6200baacaa66bdc85c195fbe6c13 IP: 127.0.0.1 Path: GET /frontOffice/notice
+2020-06-08 11:00:50,244 INFO  [http-nio-8080-exec-7] CmisAuthRepository: creating a new CMIS Session for ticket: TICKET_2a61cfd16f8f6200baacaa66bdc85c195fbe6c13
+2020-06-08 11:00:51,205 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from classpath XML Document: F:jconon_call:folder
+2020-06-08 11:00:51,234 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from CMIS server type: F:jconon_call:folder
+2020-06-08 11:00:51,242 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from classpath XML Document: P:jconon_call:aspect_inquadramento
+2020-06-08 11:00:51,255 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from CMIS server type: P:jconon_call:aspect_inquadramento
+2020-06-08 11:00:51,277 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from classpath XML Document: P:jconon_call:aspect_punteggi
+2020-06-08 11:00:51,285 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from CMIS server type: P:jconon_call:aspect_punteggi
+2020-06-08 11:00:51,304 WARN  [http-nio-8080-exec-10] BulkInfoRepository: Type: P:jconon_call:aspect_punteggi not found!
+2020-06-08 11:00:51,315 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from classpath XML Document: P:jconon_call:aspect_lingue_da_conoscere
+2020-06-08 11:00:51,324 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from CMIS server type: P:jconon_call:aspect_macro_call
+2020-06-08 11:00:51,340 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from classpath XML Document: P:jconon_call:aspect_macro_call
+2020-06-08 11:00:51,357 INFO  [http-nio-8080-exec-10] BulkInfoRepository: loading from CMIS server type: P:jconon_call:aspect_lingue_da_conoscere
+2020-06-08 11:01:19,737 INFO  [Thread-17] ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020-06-08 11:01:19,745 INFO  [Thread-17] ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-08 11:01:19,814 WARN  [Thread-17] DisposableBeanAdapter: Destroy method 'shutdown' on bean with name 'cluster' threw an exception: com.hazelcast.core.HazelcastInstanceNotActiveException: Hazelcast instance is not active!
+2020-06-08 11:01:19,835 INFO  [Thread-17] CacheConfiguration: Closing Cache Manager
+2020-06-08 14:45:46,662 INFO  [main] CoolJcononApplication: Starting CoolJcononApplication on docker with PID 3998 (/home/docker/.m2/repository/it/cnr/si/cool/jconon/cool-jconon-backend/4.3.20-SNAPSHOT/cool-jconon-backend-4.3.20-SNAPSHOT.jar started by docker in /home/docker/git/cool-jconon-oiv)
+2020-06-08 14:45:46,682 INFO  [main] CoolJcononApplication: The following profiles are active: fp
+2020-06-08 14:45:58,211 INFO  [main] AjpConfiguration: set ajp timeout to 120000
+2020-06-08 14:45:59,288 INFO  [main] AjpConfiguration$1: New cache size (KB): 40960
+2020-06-08 14:45:59,299 INFO  [main] TomcatWebServer: Tomcat initialized with port(s): 8080 (http) 8009 (http)
+2020-06-08 14:45:59,394 INFO  [main] Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-08 14:45:59,484 INFO  [main] AjpNioProtocol: Initializing ProtocolHandler ["ajp-nio-8009"]
+2020-06-08 14:45:59,583 INFO  [main] StandardService: Starting service [Tomcat]
+2020-06-08 14:45:59,587 INFO  [main] StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-06-08 14:46:00,066 INFO  [main] [/]: Initializing Spring embedded WebApplicationContext
+2020-06-08 14:46:00,067 INFO  [main] ContextLoader: Root WebApplicationContext: initialization completed in 13084 ms
+2020-06-08 14:46:01,525 INFO  [main] CacheConfiguration: Starting HazelcastCacheManager
+2020-06-08 14:46:01,662 INFO  [main] CacheConfiguration: using mancenter: http://127.0.0.1
+2020-06-08 14:46:01,666 INFO  [main] CacheConfiguration: TCP members: 127.0.0.1
+2020-06-08 14:46:01,717 INFO  [main] CacheConfiguration: time to live: 86400
+2020-06-08 14:46:01,902 INFO  [main] DefaultAddressPicker: [LOCAL] [dev] [3.7.2] Interfaces is disabled, trying to pick one address from TCP-IP config addresses: [127.0.0.1]
+2020-06-08 14:46:01,921 INFO  [main] DefaultAddressPicker: [LOCAL] [dev] [3.7.2] Picked [127.0.0.1]:5601, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5601], bind any local is true
+2020-06-08 14:46:02,050 INFO  [main] system: [127.0.0.1]:5601 [dev] [3.7.2] Hazelcast 3.7.2 (20161004 - 540b01c) starting at [127.0.0.1]:5601
+2020-06-08 14:46:02,051 INFO  [main] system: [127.0.0.1]:5601 [dev] [3.7.2] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
+2020-06-08 14:46:02,059 INFO  [main] system: [127.0.0.1]:5601 [dev] [3.7.2] Configured Hazelcast Serialization version : 1
+2020-06-08 14:46:03,205 INFO  [main] BackpressureRegulator: [127.0.0.1]:5601 [dev] [3.7.2] Backpressure is disabled
+2020-06-08 14:46:05,475 INFO  [main] Node: [127.0.0.1]:5601 [dev] [3.7.2] Creating TcpIpJoiner
+2020-06-08 14:46:05,480 INFO  [main] LifecycleService: [127.0.0.1]:5601 [dev] [3.7.2] [127.0.0.1]:5601 is STARTING
+2020-06-08 14:46:06,079 INFO  [main] OperationExecutorImpl: [127.0.0.1]:5601 [dev] [3.7.2] Starting 2 partition threads
+2020-06-08 14:46:06,087 INFO  [main] OperationExecutorImpl: [127.0.0.1]:5601 [dev] [3.7.2] Starting 3 generic threads (1 dedicated for priority tasks)
+2020-06-08 14:46:06,124 INFO  [main] NonBlockingIOThreadingModel: [127.0.0.1]:5601 [dev] [3.7.2] TcpIpConnectionManager configured with Non Blocking IO-threading model: 3 input threads and 3 output threads
+2020-06-08 14:46:06,201 INFO  [main] TcpIpJoiner: [127.0.0.1]:5601 [dev] [3.7.2] 
+
+
+Members [1] {
+	Member [127.0.0.1]:5601 - dd7407c8-26aa-4a5c-b774-34de51285d22 this
+}
+
+2020-06-08 14:46:06,391 INFO  [main] ManagementService: [127.0.0.1]:5601 [dev] [3.7.2] Hazelcast JMX agent enabled.
+2020-06-08 14:46:06,567 INFO  [main] LifecycleService: [127.0.0.1]:5601 [dev] [3.7.2] [127.0.0.1]:5601 is STARTED
+2020-06-08 14:46:06,595 INFO  [main] ManagementCenterService: [127.0.0.1]:5601 [dev] [3.7.2] Hazelcast will connect to Hazelcast Management Center on address: 
+http://127.0.0.1
+2020-06-08 14:46:06,765 INFO  [hz.jconon.MC.Task.Poller] ManagementCenterService: [127.0.0.1]:5601 [dev] [3.7.2] Failed to pull tasks from management center
+2020-06-08 14:46:06,775 INFO  [hz.jconon.MC.State.Sender] PartitionStateManager: [127.0.0.1]:5601 [dev] [3.7.2] Initializing cluster partition table arrangement...
+2020-06-08 14:46:08,020 INFO  [main] [/]: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+2020-06-08 14:46:08,742 INFO  [main] VersionService: profilo: SVILUPPO
+2020-06-08 14:46:08,744 INFO  [main] VersionService: versione: 0.0
+2020-06-08 14:46:08,963 WARN  [main] FunzionePubblicaConfiguration: overriding language: it
+2020-06-08 14:46:08,996 WARN  [main] RRDService: development mode, avoid scan document paths
+2020-06-08 14:46:09,381 INFO  [main] CacheRepository: Try to connect to repository base url: http://localhost:9080/alfresco/
+2020-06-08 14:46:09,413 INFO  [main] CmisAuthRepository: creating a new admin session
+2020-06-08 14:46:09,660 WARN  [hz.jconon.MC.State.Sender] ManagementCenterService: [127.0.0.1]:5601 [dev] [3.7.2] Failed to send response, responseCode:502 url:http://127.0.0.1/collector.do
+2020-06-08 14:47:06,239 INFO  [main] JcononConfiguration: loading i18n [i18n.cool-jconon, pages.call.call, pages.call.convocazione]
+2020-06-08 14:47:06,250 WARN  [main] QueueService: unneeded constructor injection - its only purpose is to define bean initialization order. Injected: it.cnr.cool.cmis.service.RRDService it.cnr.cool.service.I18nServiceLocation it.cnr.cool.service.I18nServiceLocation
+2020-06-08 14:47:06,527 INFO  [main] CmisAuthRepository: creating a new admin session
+2020-06-08 14:47:07,483 INFO  [main] SiperService: cache sedi-siper timeToLive: 86400
+2020-06-08 14:47:12,420 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'validator-metadata.xml'
+2020-06-08 14:47:12,427 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'validator-metadata.xml' will occur on '2020-06-08T15:47:12.245Z' ('2020-06-08T17:47:12.245+02:00' local time)
+2020-06-08 14:47:13,395 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'intesa-metadata.xml'
+2020-06-08 14:47:13,395 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'intesa-metadata.xml' will occur on '2020-06-08T15:47:13.357Z' ('2020-06-08T17:47:13.357+02:00' local time)
+2020-06-08 14:47:13,504 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'test-metadata.xml'
+2020-06-08 14:47:13,505 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'test-metadata.xml' will occur on '2020-06-08T15:47:13.494Z' ('2020-06-08T17:47:13.494+02:00' local time)
+2020-06-08 14:47:13,554 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'namirial-metadata.xml'
+2020-06-08 14:47:13,555 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'namirial-metadata.xml' will occur on '2020-06-08T15:47:13.526Z' ('2020-06-08T17:47:13.526+02:00' local time)
+2020-06-08 14:47:13,623 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'register-metadata.xml'
+2020-06-08 14:47:13,633 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'register-metadata.xml' will occur on '2020-06-08T15:47:13.599Z' ('2020-06-08T17:47:13.599+02:00' local time)
+2020-06-08 14:47:13,717 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'sielte-metadata.xml'
+2020-06-08 14:47:13,719 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'sielte-metadata.xml' will occur on '2020-06-08T15:47:13.678Z' ('2020-06-08T17:47:13.678+02:00' local time)
+2020-06-08 14:47:13,782 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'telecom-metadata.xml'
+2020-06-08 14:47:13,784 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'telecom-metadata.xml' will occur on '2020-06-08T15:47:13.750Z' ('2020-06-08T17:47:13.750+02:00' local time)
+2020-06-08 14:47:13,829 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'aruba-metadata.xml'
+2020-06-08 14:47:13,831 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'aruba-metadata.xml' will occur on '2020-06-08T15:47:13.807Z' ('2020-06-08T17:47:13.807+02:00' local time)
+2020-06-08 14:47:13,865 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'lepida-metadata.xml'
+2020-06-08 14:47:13,866 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'lepida-metadata.xml' will occur on '2020-06-08T15:47:13.854Z' ('2020-06-08T17:47:13.854+02:00' local time)
+2020-06-08 14:47:13,892 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'infocert-metadata.xml'
+2020-06-08 14:47:13,893 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'infocert-metadata.xml' will occur on '2020-06-08T15:47:13.880Z' ('2020-06-08T17:47:13.880+02:00' local time)
+2020-06-08 14:47:13,908 INFO  [main] AbstractReloadingMetadataProvider: New metadata succesfully loaded for 'poste-metadata.xml'
+2020-06-08 14:47:13,909 INFO  [main] AbstractReloadingMetadataProvider: Next refresh cycle for metadata provider 'poste-metadata.xml' will occur on '2020-06-08T15:47:13.904Z' ('2020-06-08T17:47:13.904+02:00' local time)
+2020-06-08 14:47:13,954 INFO  [main] FunzionePubblicaConfiguration: loading i18n i18n.cool-jconon-fp
+2020-06-08 14:47:15,949 INFO  [main] ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 14:47:17,999 INFO  [main] UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: b71f50e2-e3f9-4754-a219-1615c59802e2
+
+2020-06-08 14:47:18,410 INFO  [main] DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24e8445, org.springframework.security.web.context.SecurityContextPersistenceFilter@4dfc19dc, org.springframework.security.web.header.HeaderWriterFilter@39896646, org.springframework.security.web.authentication.logout.LogoutFilter@6bf007b3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6071bcb3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b1b69cb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@649f3328, org.springframework.security.web.session.SessionManagementFilter@7fc53f7f, org.springframework.security.web.access.ExceptionTranslationFilter@4c12f1ed]
+2020-06-08 14:47:19,710 INFO  [main] ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020-06-08 14:47:19,898 INFO  [main] EndpointLinksResolver: Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-06-08 14:47:20,235 INFO  [main] Http11NioProtocol: Starting ProtocolHandler ["http-nio-8080"]
+2020-06-08 14:47:20,339 INFO  [main] AjpNioProtocol: Starting ProtocolHandler ["ajp-nio-8009"]
+2020-06-08 14:47:22,632 INFO  [main] TomcatWebServer: Tomcat started on port(s): 8080 (http) 8009 (http) with context path ''
+2020-06-08 14:47:22,645 INFO  [main] CoolJcononApplication: Started CoolJcononApplication in 99.103 seconds (JVM running for 157.784)
+2020-06-08 14:48:56,214 INFO  [http-nio-8080-exec-1] [/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 14:48:56,214 INFO  [http-nio-8080-exec-1] DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-06-08 14:48:56,236 INFO  [http-nio-8080-exec-1] DispatcherServlet: Completed initialization in 22 ms
+2020-06-08 14:48:56,672 WARN  [http-nio-8080-exec-1] Providers: A provider org.apache.tools.ant.taskdefs.Copy registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.tools.ant.taskdefs.Copy will be ignored. 
+2020-06-08 14:48:56,673 WARN  [http-nio-8080-exec-1] Providers: A provider net.sf.jasperreports.engine.export.Cut registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider net.sf.jasperreports.engine.export.Cut will be ignored. 
+2020-06-08 14:48:57,635 INFO  [http-nio-8080-exec-1] CmisAuthRepository: creating binding session for ticket TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a
+2020-06-08 14:48:57,739 INFO  [http-nio-8080-exec-1] CmisAuthRepository: user not cached for ticket TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a
+2020-06-08 14:48:58,171 INFO  [http-nio-8080-exec-1] CmisAuthRepository: add to cache user admin to the cache having ticket = TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a
+2020-06-08 14:48:58,219 INFO  [http-nio-8080-exec-1] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /page/my-applications
+2020-06-08 14:48:58,247 INFO  [http-nio-8080-exec-1] CmisAuthRepository: creating a new admin session
+2020-06-08 14:48:59,496 INFO  [http-nio-8080-exec-1] I18nRepository: 1173 properties loaded for locale it
+2020-06-08 14:49:01,550 INFO  [http-nio-8080-exec-9] I18n: actual language: it
+2020-06-08 14:49:01,603 INFO  [http-nio-8080-exec-7] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /common
+2020-06-08 14:49:02,030 INFO  [http-nio-8080-exec-6] CacheRepository: Try to connect to repository base url: http://localhost:9080/alfresco/
+2020-06-08 14:49:02,474 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: F:jconon_application:folder
+2020-06-08 14:49:04,456 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condanne_penali_rapporto_lavoro
+2020-06-08 14:49:04,475 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condanne_penali
+2020-06-08 14:49:04,541 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condanne_penali
+2020-06-08 14:49:04,566 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condanne_penali_required
+2020-06-08 14:49:04,589 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: F:jconon_application:folder
+2020-06-08 14:49:04,624 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_area_amministrativa
+2020-06-08 14:49:04,630 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_area_amministrativa
+2020-06-08 14:49:04,654 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_esperienza
+2020-06-08 14:49:04,662 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_esperienza
+2020-06-08 14:49:04,687 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_dottorato_not_required
+2020-06-08 14:49:04,698 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_dottorato_not_required
+2020-06-08 14:49:04,723 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_dottorato
+2020-06-08 14:49:04,739 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_dottorato
+2020-06-08 14:49:04,772 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_anzianita_servizio
+2020-06-08 14:49:04,785 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_anzianita_servizio
+2020-06-08 14:49:04,804 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_laurea
+2020-06-08 14:49:04,810 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_laurea
+2020-06-08 14:49:04,896 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_idoneita_fisica
+2020-06-08 14:49:04,902 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_idoneita_fisica
+2020-06-08 14:49:04,918 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_altri_incarichi_oiv
+2020-06-08 14:49:04,922 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_altri_incarichi_oiv
+2020-06-08 14:49:04,944 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspects
+2020-06-08 14:49:04,947 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspects
+2020-06-08 14:49:04,981 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: cmis:secondary
+2020-06-08 14:49:04,989 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: cmis:secondary
+2020-06-08 14:49:05,008 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizio_altra_attivita
+2020-06-08 14:49:05,021 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizio_altra_attivita
+2020-06-08 14:49:05,040 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizio_altre_amministrazioniWithoutDirettore
+2020-06-08 14:49:05,046 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizio_altre_amministrazioniWithoutDirettore
+2020-06-08 14:49:05,061 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizio_altre_amministrazioni
+2020-06-08 14:49:05,072 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizio_altre_amministrazioni
+2020-06-08 14:49:05,100 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_titolo_preferenza_posti
+2020-06-08 14:49:05,105 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_titolo_preferenza_posti
+2020-06-08 14:49:05,135 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_altre_borse_studio
+2020-06-08 14:49:05,143 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_altre_borse_studio
+2020-06-08 14:49:05,177 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_diversamente_abile
+2020-06-08 14:49:05,192 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_diversamente_abile
+2020-06-08 14:49:05,213 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_lingua_italiana
+2020-06-08 14:49:05,218 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_lingua_italiana
+2020-06-08 14:49:05,237 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_categorie_riservatarie_art18
+2020-06-08 14:49:05,239 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_categorie_riservatarie_art18
+2020-06-08 14:49:05,258 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_laurea_not_required
+2020-06-08 14:49:05,265 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_laurea_not_required
+2020-06-08 14:49:05,317 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_iscrizione_liste_elettorali
+2020-06-08 14:49:05,327 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_iscrizione_liste_elettorali
+2020-06-08 14:49:05,357 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_settore_scientifico_tecnologico
+2020-06-08 14:49:05,372 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_settore_scientifico_tecnologico
+2020-06-08 14:49:05,404 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_ente_comparto_universita_appartenenza
+2020-06-08 14:49:05,409 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_ente_comparto_universita_appartenenza
+2020-06-08 14:49:05,427 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_lista_disoccupazione_art1
+2020-06-08 14:49:05,429 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_lista_disoccupazione_art1
+2020-06-08 14:49:05,469 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_sede
+2020-06-08 14:49:05,475 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_sede
+2020-06-08 14:49:05,497 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_situazione_lavorativa
+2020-06-08 14:49:05,512 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_situazione_lavorativa
+2020-06-08 14:49:05,534 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_area_tecnica
+2020-06-08 14:49:05,546 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_area_tecnica
+2020-06-08 14:49:05,570 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_area_scientifica_not_required
+2020-06-08 14:49:05,587 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_area_scientifica_not_required
+2020-06-08 14:49:05,614 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_area_scientifica
+2020-06-08 14:49:05,621 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_area_scientifica
+2020-06-08 14:49:05,643 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_h_index
+2020-06-08 14:49:05,647 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_h_index
+2020-06-08 14:49:05,661 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_diploma
+2020-06-08 14:49:05,669 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_diploma
+2020-06-08 14:49:05,695 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_ente_appartenenza
+2020-06-08 14:49:05,700 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_ente_appartenenza
+2020-06-08 14:49:05,716 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condizione_esclusione
+2020-06-08 14:49:05,721 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condizione_esclusione
+2020-06-08 14:49:05,738 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_licenziamento_disciplinare
+2020-06-08 14:49:05,742 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_licenziamento_disciplinare
+2020-06-08 14:49:05,769 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_sanzione_disciplinare
+2020-06-08 14:49:05,788 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_sanzione_disciplinare
+2020-06-08 14:49:05,815 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_anzianita_livello
+2020-06-08 14:49:05,823 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_anzianita_livello
+2020-06-08 14:49:05,855 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_condanne_contabili
+2020-06-08 14:49:05,859 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condanne_contabili
+2020-06-08 14:49:05,886 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_struttura_appartenenza
+2020-06-08 14:49:05,891 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_struttura_appartenenza
+2020-06-08 14:49:05,907 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_titolo_riserva_posti
+2020-06-08 14:49:05,914 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_titolo_riserva_posti
+2020-06-08 14:49:05,934 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_atto_interruttivo_anzianita
+2020-06-08 14:49:05,939 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_atto_interruttivo_anzianita
+2020-06-08 14:49:05,961 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_possesso_cittadinanza_italiana
+2020-06-08 14:49:05,994 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_possesso_cittadinanza_italiana
+2020-06-08 14:49:06,023 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_nulla_osta
+2020-06-08 14:49:06,031 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_nulla_osta
+2020-06-08 14:49:06,049 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_sentenza_giudicato
+2020-06-08 14:49:06,051 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_sentenza_giudicato
+2020-06-08 14:49:06,084 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_specializzazione
+2020-06-08 14:49:06,101 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_specializzazione
+2020-06-08 14:49:06,121 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_decaduto_altro_impiego
+2020-06-08 14:49:06,125 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_decaduto_altro_impiego
+2020-06-08 14:49:06,139 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_lingue
+2020-06-08 14:49:06,144 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_lingue
+2020-06-08 14:49:06,159 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_incompatibilita
+2020-06-08 14:49:06,163 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_incompatibilita
+2020-06-08 14:49:06,202 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_esperienza_gestionale
+2020-06-08 14:49:06,206 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_esperienza_gestionale
+2020-06-08 14:49:06,223 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizioCNR
+2020-06-08 14:49:06,228 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizioCNR
+2020-06-08 14:49:06,247 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_informatica_avanzata
+2020-06-08 14:49:06,251 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_informatica_avanzata
+2020-06-08 14:49:06,265 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_possesso_requisiti
+2020-06-08 14:49:06,269 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_possesso_requisiti
+2020-06-08 14:49:06,312 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_precedente_servizio_altre_amministrazioni
+2020-06-08 14:49:06,324 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_precedente_servizio_altre_amministrazioni
+2020-06-08 14:49:06,375 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_patente_guida
+2020-06-08 14:49:06,377 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_patente_guida
+2020-06-08 14:49:06,414 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_obblighi_militari
+2020-06-08 14:49:06,417 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_obblighi_militari
+2020-06-08 14:49:06,447 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_precedente_incarico_oiv
+2020-06-08 14:49:06,449 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_precedente_incarico_oiv
+2020-06-08 14:49:06,470 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_diploma_not_required
+2020-06-08 14:49:06,475 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_diploma_not_required
+2020-06-08 14:49:06,503 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_settore_scientifico_tecnologico_not_required
+2020-06-08 14:49:06,507 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_settore_scientifico_tecnologico_not_required
+2020-06-08 14:49:06,525 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_superato_periodo_prova
+2020-06-08 14:49:06,530 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_superato_periodo_prova
+2020-06-08 14:49:06,546 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_godimento_diritti
+2020-06-08 14:49:06,550 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_godimento_diritti
+2020-06-08 14:49:06,564 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_precedente_servizio_cnr
+2020-06-08 14:49:06,569 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_precedente_servizio_cnr
+2020-06-08 14:49:06,603 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_servizioCNRWithoutDirettore
+2020-06-08 14:49:06,607 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_servizioCNRWithoutDirettore
+2020-06-08 14:49:06,620 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_lista_disoccupazione_art18
+2020-06-08 14:49:06,622 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_lista_disoccupazione_art18
+2020-06-08 14:49:06,640 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_alta_qualificazione
+2020-06-08 14:49:06,644 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_alta_qualificazione
+2020-06-08 14:49:06,662 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_vincolo_sede
+2020-06-08 14:49:06,664 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_vincolo_sede
+2020-06-08 14:49:06,682 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_conoscenza_inglese_informatica
+2020-06-08 14:49:06,687 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_conoscenza_inglese_informatica
+2020-06-08 14:49:06,709 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_residenza_generica
+2020-06-08 14:49:06,712 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_residenza_generica
+2020-06-08 14:49:06,729 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_esperienza_professionale
+2020-06-08 14:49:06,731 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_esperienza_professionale
+2020-06-08 14:49:06,753 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_destituito_altro_impiego
+2020-06-08 14:49:06,758 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_destituito_altro_impiego
+2020-06-08 14:49:06,776 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_rimosso_incarico_oiv
+2020-06-08 14:49:06,778 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_rimosso_incarico_oiv
+2020-06-08 14:49:06,807 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_nulla_osta_obbligatorio
+2020-06-08 14:49:06,811 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_nulla_osta_obbligatorio
+2020-06-08 14:49:06,824 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_magistrato_contabile
+2020-06-08 14:49:06,827 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_magistrato_contabile
+2020-06-08 14:49:06,851 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_possesso_cittadinanza
+2020-06-08 14:49:06,852 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_possesso_cittadinanza
+2020-06-08 14:49:06,898 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_fascia_professionale_attribuita
+2020-06-08 14:49:06,911 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_fascia_professionale_attribuita
+2020-06-08 14:49:06,928 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_godimento_diritti_ue
+2020-06-08 14:49:06,929 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_godimento_diritti_ue
+2020-06-08 14:49:06,949 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_ente_comparto_ricerca_appartenenza
+2020-06-08 14:49:06,956 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_ente_comparto_ricerca_appartenenza
+2020-06-08 14:49:06,971 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_anzianita_profilo
+2020-06-08 14:49:06,976 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_anzianita_profilo
+2020-06-08 14:49:07,002 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_incarichi_pubblici_apicali
+2020-06-08 14:49:07,004 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_incarichi_pubblici_apicali
+2020-06-08 14:49:07,028 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_inquadramento
+2020-06-08 14:49:07,034 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_inquadramento
+2020-06-08 14:49:07,052 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from classpath XML Document: P:jconon_application:aspect_categorie_riservatarie_art1
+2020-06-08 14:49:07,056 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_categorie_riservatarie_art1
+2020-06-08 14:49:07,205 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condanne_penali_rapporto_lavoro
+2020-06-08 14:49:07,223 WARN  [http-nio-8080-exec-6] BulkInfoRepository: Type: P:jconon_application:aspect_condanne_penali_rapporto_lavoro not found!
+2020-06-08 14:49:07,245 INFO  [http-nio-8080-exec-6] BulkInfoRepository: loading from CMIS server type: P:jconon_application:aspect_condanne_penali_required
+2020-06-08 14:49:07,259 WARN  [http-nio-8080-exec-6] BulkInfoRepository: Type: P:jconon_application:aspect_condanne_penali_required not found!
+2020-06-08 14:49:11,257 INFO  [http-nio-8080-exec-8] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /frontOffice/notice
+2020-06-08 14:49:11,323 INFO  [http-nio-8080-exec-2] CmisAuthRepository: creating a new CMIS Session for ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a
+2020-06-08 14:49:11,339 INFO  [http-nio-8080-exec-8] CmisAuthRepository: creating a new CMIS Session for ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a
+2020-06-08 14:49:12,190 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: F:jconon_call:folder
+2020-06-08 14:49:12,217 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: F:jconon_call:folder
+2020-06-08 14:49:12,263 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_call:aspect_inquadramento
+2020-06-08 14:49:12,271 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_call:aspect_inquadramento
+2020-06-08 14:49:12,306 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_call:aspect_punteggi
+2020-06-08 14:49:12,325 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_call:aspect_punteggi
+2020-06-08 14:49:12,340 WARN  [http-nio-8080-exec-9] BulkInfoRepository: Type: P:jconon_call:aspect_punteggi not found!
+2020-06-08 14:49:12,346 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_call:aspect_lingue_da_conoscere
+2020-06-08 14:49:12,349 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_call:aspect_macro_call
+2020-06-08 14:49:12,392 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from classpath XML Document: P:jconon_call:aspect_macro_call
+2020-06-08 14:49:12,419 INFO  [http-nio-8080-exec-9] BulkInfoRepository: loading from CMIS server type: P:jconon_call:aspect_lingue_da_conoscere
+2020-06-08 14:49:18,536 INFO  [http-nio-8080-exec-10] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /page/manage-application
+2020-06-08 14:49:19,657 INFO  [http-nio-8080-exec-5] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /common
+2020-06-08 14:49:19,674 INFO  [http-nio-8080-exec-7] I18n: actual language: it
+2020-06-08 14:49:20,287 INFO  [http-nio-8080-exec-2] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /manage-call/load-labels
+2020-06-08 14:49:20,574 INFO  [http-nio-8080-exec-3] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /manage-application/main
+2020-06-08 14:49:21,065 WARN  [http-nio-8080-exec-3] JCONONFolderType: Cannot execute isMobilityCall for F:jconon_call_oiv:folder
+2020-06-08 14:49:21,108 WARN  [http-nio-8080-exec-3] ApplicationService: ValidateAllegatiLinked message: Non risultano allegati i seguenti documenti obbligatori: Documento Riconoscimento, Curriculum Vitae.
+2020-06-08 14:49:21,167 INFO  [http-nio-8080-exec-1] ProxyService: http://localhost:9080/alfresco/service/cnr/person/person/admin?url=service/cnr/person/person/admin&ajax=true
+2020-06-08 14:49:21,168 INFO  [http-nio-8080-exec-1] Proxy: http://localhost:9080/alfresco/service/cnr/person/person/admin?url=service/cnr/person/person/admin&ajax=true
+2020-06-08 14:49:28,785 INFO  [http-nio-8080-exec-2] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /page/my-applications
+2020-06-08 14:49:29,599 INFO  [http-nio-8080-exec-3] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /common
+2020-06-08 14:49:34,926 INFO  [http-nio-8080-exec-9] SecurityRest: logout TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a
+2020-06-08 14:49:34,931 INFO  [http-nio-8080-exec-9] CMISService: User: admin with ticket: TICKET_20d47214360112775671b9d9fb7e35e6e6cdca6a IP: 127.0.0.1 Path: GET /security/logout
+2020-06-08 14:49:35,070 INFO  [http-nio-8080-exec-9] CommonRepository: Evict cache enableTypeCalls for user: admin
+2020-06-08 14:49:35,071 INFO  [http-nio-8080-exec-9] CommonRepository: Evict cache managers-call for user: admin
+2020-06-08 14:49:35,086 INFO  [http-nio-8080-exec-10] CmisAuthRepository: creating binding session for ticket null
+2020-06-08 14:49:35,088 INFO  [http-nio-8080-exec-10] PageService: User: guest with IP: 127.0.0.1 Path: GET /page/login
+2020-06-08 14:49:36,055 INFO  [http-nio-8080-exec-5] CmisAuthRepository: creating a new guest session
+2020-06-08 14:49:38,679 WARN  [http-nio-8080-exec-7] WebComponent: A servlet request to the URI http://localhost:8080/rest/security/login contains form parameters in the request body but the request body has been consumed by the servlet or a servlet filter accessing the request parameters. Only resource methods using @FormParam will work as expected. Resource methods consuming the request body by other means will not work as expected.
+2020-06-08 14:49:38,871 INFO  [http-nio-8080-exec-7] CmisAuthRepository: creating binding session for ticket TICKET_07df647ab2757931d2cd7d803d95385ce45f4975
+2020-06-08 14:49:38,873 INFO  [http-nio-8080-exec-7] CmisAuthRepository: user not cached for ticket TICKET_07df647ab2757931d2cd7d803d95385ce45f4975
+2020-06-08 14:49:38,981 INFO  [http-nio-8080-exec-7] CmisAuthRepository: add to cache user admin to the cache having ticket = TICKET_07df647ab2757931d2cd7d803d95385ce45f4975
+2020-06-08 14:49:39,005 INFO  [http-nio-8080-exec-6] CMISService: User: admin with ticket: TICKET_07df647ab2757931d2cd7d803d95385ce45f4975 IP: 127.0.0.1 Path: GET /page/manage-application
+2020-06-08 14:49:39,766 INFO  [http-nio-8080-exec-8] CMISService: User: admin with ticket: TICKET_07df647ab2757931d2cd7d803d95385ce45f4975 IP: 127.0.0.1 Path: GET /common
+2020-06-08 14:49:40,294 INFO  [http-nio-8080-exec-2] CmisAuthRepository: creating a new CMIS Session for ticket: TICKET_07df647ab2757931d2cd7d803d95385ce45f4975
+2020-06-08 14:49:40,378 INFO  [http-nio-8080-exec-3] CMISService: User: admin with ticket: TICKET_07df647ab2757931d2cd7d803d95385ce45f4975 IP: 127.0.0.1 Path: GET /manage-call/load-labels
+2020-06-08 14:49:40,419 INFO  [http-nio-8080-exec-1] CMISService: User: admin with ticket: TICKET_07df647ab2757931d2cd7d803d95385ce45f4975 IP: 127.0.0.1 Path: GET /manage-application/main
+2020-06-08 14:49:40,860 WARN  [http-nio-8080-exec-1] JCONONFolderType: Cannot execute isMobilityCall for F:jconon_call_oiv:folder
+2020-06-08 14:49:40,908 WARN  [http-nio-8080-exec-1] ApplicationService: ValidateAllegatiLinked message: Non risultano allegati i seguenti documenti obbligatori: Documento Riconoscimento, Curriculum Vitae.
+2020-06-08 14:49:40,930 INFO  [http-nio-8080-exec-9] ProxyService: http://localhost:9080/alfresco/service/cnr/person/person/admin?url=service/cnr/person/person/admin&ajax=true
+2020-06-08 14:49:40,931 INFO  [http-nio-8080-exec-9] Proxy: http://localhost:9080/alfresco/service/cnr/person/person/admin?url=service/cnr/person/person/admin&ajax=true
+2020-06-08 14:49:46,149 INFO  [http-nio-8080-exec-7] CMISService: User: admin with ticket: TICKET_07df647ab2757931d2cd7d803d95385ce45f4975 IP: 127.0.0.1 Path: GET /page/my-applications
+2020-06-08 14:49:46,848 INFO  [http-nio-8080-exec-6] CMISService: User: admin with ticket: TICKET_07df647ab2757931d2cd7d803d95385ce45f4975 IP: 127.0.0.1 Path: GET /common
+2020-06-08 15:26:15,958 INFO  [Thread-17] ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020-06-08 15:26:16,169 INFO  [Thread-17] ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-08 15:26:16,427 WARN  [Thread-17] DisposableBeanAdapter: Destroy method 'shutdown' on bean with name 'cluster' threw an exception: com.hazelcast.core.HazelcastInstanceNotActiveException: State: SHUT_DOWN Operation: class com.hazelcast.internal.cluster.impl.operations.LockClusterStateOperation
+2020-06-08 15:26:16,497 INFO  [Thread-17] CacheConfiguration: Closing Cache Manager
