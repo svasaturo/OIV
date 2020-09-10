@@ -1,0 +1,37 @@
+<!--
+  ~ Copyright (C) 2019  Consiglio Nazionale delle Ricerche
+  ~
+  ~     This program is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU Affero General Public License as
+  ~     published by the Free Software Foundation, either version 3 of the
+  ~     License, or (at your option) any later version.
+  ~
+  ~     This program is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU Affero General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU Affero General Public License
+  ~     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<webscript>
+   <shortname>Create Group.</shortname>
+   <description><![CDATA[
+      Remove child authority to given Group
+      {
+         "parent_node_ref" : "workspace://SpacesStore/5c8c8311-d73d-47ab-96a9-8d7ede91efa1",
+         "parent_group_name" : "GROUP_PARENT",
+         "group_name" : "PROVA",
+         "display_name" : "DESCRIZIONE PROVA"
+      }
+   ]]>
+   </description>
+   <url>/cnr/groups/group</url>
+   <format default="json">argument</format>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+   <lifecycle>draft_public_api</lifecycle>
+   <family>CNR</family>
+   <family>groups</family>
+</webscript>
