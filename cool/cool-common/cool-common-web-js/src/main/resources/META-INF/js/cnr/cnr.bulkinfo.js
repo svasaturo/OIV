@@ -347,8 +347,11 @@ define(['cnr/cnr.ui.widgets', 'jquery', 'cnr/cnr', 'cnr/cnr.style', 'handlebars'
       return validator.resetForm();
     }
 
-    function renderElement(divContainer, rules, index, item) {
-      if (settings.metadata) {
+    function renderElement(divContainer, rules, index, item, nuoveDichiarazioni) {
+     if (settings.metadata) {
+    	 if(nuoveDichiarazioni){
+			 settings.metadata[item.property]=false;	 
+    	 }
         item.val = settings.metadata[item.property];
       }
       settings.callback.beforeCreateElement(item);
@@ -377,11 +380,22 @@ define(['cnr/cnr.ui.widgets', 'jquery', 'cnr/cnr', 'cnr/cnr.style', 'handlebars'
     function renderView(formName, form, data, rules) {
       var section = $('<section id=' + formName + '></section>').appendTo(form),
         divContainer = $('<div></div>').appendTo(section);
+      var nuoveDichiarazioni=false;
       if (settings.callback.afterCreateSection) {
         settings.callback.afterCreateSection(section);
       }
       $.each(data, function (index, item) {
-        renderElement(divContainer, rules, index, item);
+    	  if(formName.includes("P:jconon_application:aspect_condanne_penali_required") || 
+  			  	formName.includes("P:jconon_application:aspect_sentenza_giudicato") ||
+  				formName.includes("P:jconon_application:aspect_condanne_contabili") ||
+  				formName.includes("P:jconon_application:aspect_incarichi_pubblici_apicali")){
+		  	  var lastMod = new Date(settings.metadata["cmis:lastModificationDate"]);
+		  	  var dataDecreto = new Date('2020-09-10T13:16:52.878Z');
+		  	  if(lastMod<dataDecreto){
+		  		nuoveDichiarazioni=true;	 
+		  	  }
+    	  }
+        renderElement(divContainer, rules, index, item,nuoveDichiarazioni);
       });
     }
 
