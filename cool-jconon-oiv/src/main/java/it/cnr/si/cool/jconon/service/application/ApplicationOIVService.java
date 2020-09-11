@@ -269,15 +269,16 @@ public class ApplicationOIVService extends ApplicationService {
 				e.printStackTrace();
 			}
             LOGGER.info("decreto entrata a {}: {}", da, decreto);
-            
-            if(da.getTimeInMillis()<decreto.getTimeInMillis()) {
-            	da=decreto;
-            }
-            if (oiv.getPropertyValueById(JCONON_ATTACHMENT_PRECEDENTE_INCARICO_OIV_NUMERO_DIPENDENTI).equals(INF250)) {
-            	
-                oivPeriodInf250.add(new Interval(da, a));
-            } else if (oiv.getPropertyValueById(JCONON_ATTACHMENT_PRECEDENTE_INCARICO_OIV_NUMERO_DIPENDENTI).equals(SUP250)) {
-                oivPeriodSup250.add(new Interval(da, a));
+            if(a.getTimeInMillis()>decreto.getTimeInMillis()) {
+	            if(da.getTimeInMillis()<decreto.getTimeInMillis()) {
+	            	da=decreto;
+	            }
+	            if (oiv.getPropertyValueById(JCONON_ATTACHMENT_PRECEDENTE_INCARICO_OIV_NUMERO_DIPENDENTI).equals(INF250)) {
+	            	
+	                oivPeriodInf250.add(new Interval(da, a));
+	            } else if (oiv.getPropertyValueById(JCONON_ATTACHMENT_PRECEDENTE_INCARICO_OIV_NUMERO_DIPENDENTI).equals(SUP250)) {
+	                oivPeriodSup250.add(new Interval(da, a));
+	            }
             }
         }
         return assegnaFascia(esperienzePeriod, oivPeriodSup250, oivPeriodInf250, ammPeriod,ammGenPeriod);

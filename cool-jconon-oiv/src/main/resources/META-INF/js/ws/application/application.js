@@ -945,7 +945,8 @@ if((metadata["jconon_application:esclusione_rinuncia"] == null ) || (metadata["j
 				  btn = $('<span class="btn btn-file btn-primary"></span>'),
 				  htext = $('<h2>Carica la domanda firmata </h2>'),
 				  inputFile = $('<input  type="file" name="domandapdf"/>'),
-				  previewPdf=$('<br><br><embed   id="pdfPreview" src="" width="350"  height="300">'),
+				//  previewPdf=$('<br><br><embed   id="pdfPreview" src="" width="350"  height="300">'),
+				  previewPdf=$('<br><br><iframe   id="pdfPreview" src="" width="350"  height="300" style="display: none;">'),
 				  removeButton=$('<a href="#" class="btn fileupload-exists disabled" data-dismiss="fileupload">Rimuovi</a>'),
 				  btnPrimary,
 				  m;
@@ -995,19 +996,22 @@ if((metadata["jconon_application:esclusione_rinuncia"] == null ) || (metadata["j
 				m.find("#pdfPreview").attr("src","");
 				m.find( ".submit" ).addClass("disabled");
 				m.find(".input-xlarge").css("width","");
+				m.find("#pdfPreview").css("display","none");
 			});
 			
             inputFile.on('change', function (e) {
               var path = $(e.target).val();
               setValue(path);
 			 
-			  
-			var src= window.URL.createObjectURL(event.target.files[0]);
-			m.find("#pdfPreview").attr("src",src);
+			  if(event.target.files!= undefined){
+				var src= window.URL.createObjectURL(event.target.files[0]);
+				m.find("#pdfPreview").attr("src",src);
+				m.find("#pdfPreview").css("display","initial");
+			  }
 			 // $(".modal").css("height","350px");
 			m.find(".modal-body").css("max-height","300px");
 			m.find( ".submit" ).removeClass("disabled");
-			m.find(".input-xlarge").css("width","auto");
+		//	m.find(".input-xlarge").css("width","auto");
             });
 
             function sendFile() {
