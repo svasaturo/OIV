@@ -1,3 +1,0 @@
-{
-	"keyMessage" : "${status.exception.keyMessage}"
-}

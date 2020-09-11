@@ -1,8 +1,0 @@
-/home/docker/ElnecoOIV/cool/cool-view/src/main/java/it/cnr/bulkinfo/BulkInfoImpl.java
-/home/docker/ElnecoOIV/cool/cool-view/src/main/java/it/cnr/bulkinfo/BulkInfoSerializer.java
-/home/docker/ElnecoOIV/cool/cool-view/src/main/java/it/cnr/bulkinfo/BulkInfo.java
-/home/docker/ElnecoOIV/cool/cool-view/src/main/java/it/cnr/bulkinfo/exception/BulkinfoKindException.java
-/home/docker/ElnecoOIV/cool/cool-view/src/main/java/it/cnr/bulkinfo/exception/BulkInfoException.java
-/home/docker/ElnecoOIV/cool/cool-view/src/main/java/it/cnr/bulkinfo/exception/BulkinfoNameException.java
-/home/docker/ElnecoOIV/cool/cool-view/src/main/java/it/cnr/bulkinfo/exception/BulkInfoNotFoundException.java
-/home/docker/ElnecoOIV/cool/cool-view/src/main/java/it/cnr/bulkinfo/BulkInfoService.java

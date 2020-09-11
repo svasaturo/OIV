@@ -296,17 +296,8 @@ public class ManageApplication {
     @Path("main")
     public Response loadApplication(@Context HttpServletRequest request,
                                     @QueryParam("callId") String callId, @QueryParam("applicationId") String applicationId,
-                                    @QueryParam("userId") String userId, @QueryParam("preview") boolean preview,  @QueryParam("rinnovo") boolean rinnovo) {
-    	LOGGER.error("main loadApplication "+rinnovo);
-    	LOGGER.error("main loadApplication "+userId);
-    	LOGGER.error("main loadApplication "+preview);
-    	LOGGER.error("main loadApplication "+callId);
-    	LOGGER.error("main loadApplication "+applicationId);
+                                    @QueryParam("userId") String userId, @QueryParam("preview") boolean preview) {
     	
-    	LOGGER.error("main loadApplication pippo "+CMISContext.class.getName());
-    	
-      if(!rinnovo) {
-    	  LOGGER.error("main modifica ");
     	try {
             return Response.ok(CMISUtil.convertToProperties(
                     applicationService.load(cmisService.getCurrentCMISSession(request),
@@ -319,20 +310,6 @@ public class ManageApplication {
         } catch (RedirectionException e) {
             return Response.status(Status.SEE_OTHER).entity(Collections.singletonMap("location", e.getLocation())).build();
         }
-      }else {
-    	  LOGGER.error("main rinnovo "+rinnovo);
-    	  try {
-              return Response.ok(CMISUtil.convertToProperties(
-                      applicationService.load(cmisService.getCurrentCMISSession(request),
-                              callId, applicationId, userId, preview, getContextURL(request), request.getLocale())
-              )).build();
-          } catch (ClientMessageException e) {
-              LOGGER.warn("load application {} {} error: {}", applicationId, callId, e.getMessage());
-              return Response.status(Status.INTERNAL_SERVER_ERROR).entity(Collections.singletonMap("message", e.getMessage())).build();
-          } catch (RedirectionException e) {
-              return Response.status(Status.SEE_OTHER).entity(Collections.singletonMap("location", e.getLocation())).build();
-          }
-      }
     }
     
     @GET
