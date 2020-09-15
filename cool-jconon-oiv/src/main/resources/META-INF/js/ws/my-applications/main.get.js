@@ -331,6 +331,7 @@ console.log("main");
        //   baseCriteria.and(new Criteria().equals('jconon_application:data_iscrizione_elenco', 'null').build());
  
         }
+      
 
       if (applicationStatus && applicationStatus === 'attive') {
         baseCriteria.and(new Criteria().isNotNull('jconon_application:progressivo_iscrizione_elenco').build());
