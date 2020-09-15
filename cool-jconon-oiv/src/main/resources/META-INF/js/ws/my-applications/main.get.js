@@ -189,17 +189,65 @@ console.log("main");
       maxUploadSize: maxUploadSize === undefined ? false : maxUploadSize
     });
   }
+  
+//  Handlebars.registerHelper('ultimaModifica', function declare(code, dataInvioDomanda, dataUltimaModifica, dataScadenza) {
+//	    var dateFormat = "DD/MM/YYYY HH:mm:ss",
+//	      isTemp = (code === 'P' || code === 'I'),
+//	    //  msg = i18n['label.application.stato.' + (code === 'I' ? 'P' : code)],
+//	      item = $('<label class="label"></label>')
+//	        .addClass('label-info')
+//	        .addClass(dataScadenza !== "" && (moment().diff(dataScadenza, 'days') > -7) ? 'animated flash' : '')
+//	      //  .append(msg)
+//	        .append(('Profilo utente - ultima modifica ' + CNR.Date.format(dataUltimaModifica, '-', dateFormat)) );
+//	    return $('<div>').append(item).html();
+//	  });
+  
   Handlebars.registerHelper('applicationStatus', function declare(code, dataInvioDomanda, dataUltimaModifica, dataScadenza) {
+	  if(code === 'P' || code === 'I'){
+		  var dateFormat = "DD/MM/YYYY HH:mm:ss",
+	      isTemp = (code === 'P' || code === 'I'),
+	    //  msg = i18n['label.application.stato.' + (code === 'I' ? 'P' : code)],
+	      item = $('<label class="label"></label>')
+	        .addClass('label-info')
+	        .addClass(dataScadenza !== "" && (moment().diff(dataScadenza, 'days') > -7) ? 'animated flash' : '')
+	      //  .append(msg)
+	        .append(('Profilo utente - ultima modifica ' + CNR.Date.format(dataUltimaModifica, '-', dateFormat)) ); 
+		  return $('<div>').append(item).html();
+		  
+	  }else{
+		  
+		  var dateFormat = "DD/MM/YYYY HH:mm:ss",
+	      isTemp = (code === 'P' || code === 'I'),
+	    //  msg = i18n['label.application.stato.' + (code === 'I' ? 'P' : code)],
+	      item = $('<label class="label"></label>')
+	        .addClass('label-info')
+	        .addClass(dataScadenza !== "" && (moment().diff(dataScadenza, 'days') > -7) ? 'animated flash' : '')
+	      //  .append(msg)
+	        .append(('Profilo utente - ultima modifica ' + CNR.Date.format(dataUltimaModifica, '-', dateFormat)) );
+		  
+		  var dateFormat2 = "DD/MM/YYYY HH:mm:ss",
+	      isTemp2 = (code === 'P' || code === 'I'),
+	      msg2 = i18n['label.application.stato.' + ( code)],
+	      item2 = $('<label class="label"></label>')
+	        .addClass( 'label-success')
+	        .addClass(dataScadenza !== "" && (moment().diff(dataScadenza, 'days') > -7) ? 'animated flash' : '')
+	        .append(msg2)
+	        .append((' il ' + CNR.Date.format(dataInvioDomanda, '-', dateFormat)));
+		  return $('<div>').append(item).html() + $('<div>').append(item2).html();
+	  }
+		  
     var dateFormat = "DD/MM/YYYY HH:mm:ss",
       isTemp = (code === 'P' || code === 'I'),
-      msg = i18n['label.application.stato.' + (code === 'I' ? 'P' : code)],
+      msg = i18n['label.application.stato.' + ( code)],
       item = $('<label class="label"></label>')
-        .addClass(isTemp ? 'label-info' : 'label-success')
+        .addClass( 'label-success')
         .addClass(dataScadenza !== "" && (moment().diff(dataScadenza, 'days') > -7) ? 'animated flash' : '')
         .append(msg)
-        .append(isTemp ? (' - ultima modifica ' + CNR.Date.format(dataUltimaModifica, '-', dateFormat)) : (' il ' + CNR.Date.format(dataInvioDomanda, '-', dateFormat)));
+        .append((' il ' + CNR.Date.format(dataInvioDomanda, '-', dateFormat)));
     return $('<div>').append(item).html();
   });
+  
+  
 
   Handlebars.registerHelper('iscrizioneElenco', function declare(numero, data, fascia_professionale_validata, fascia_professionale_attribuita) {
     var dateFormat = "DD/MM/YYYY",
@@ -270,9 +318,19 @@ console.log("main");
         user = bulkInfo.getDataValueById('user'),
         url;
 
-      if (applicationStatus && applicationStatus !== 'tutte' && applicationStatus !== 'attive' && applicationStatus !== 'escluse') {
+      if (applicationStatus && applicationStatus !== 'tutte' && applicationStatus !== 'attive' && applicationStatus !== 'escluse' && applicationStatus !== 'C') {
         baseCriteria.and(new Criteria().equals('jconon_application:stato_domanda', applicationStatus).build());
       }
+      
+      if (applicationStatus && applicationStatus === 'C') {
+          baseCriteria.and(new Criteria().equals('jconon_application:stato_domanda', applicationStatus).build());
+          
+  //        baseCriteria.and(new Criteria().isNull('jconon_application:data_iscrizione_elenco').build());
+//          baseCriteria.and(new Criteria().not(new Criteria().contains('ASPECT:\'jconon_application:data_iscrizione_elenco\'')).build());
+       //   NOT CONTAINS('ASPECT:\'myNs:myAspect\'')
+       //   baseCriteria.and(new Criteria().equals('jconon_application:data_iscrizione_elenco', 'null').build());
+ 
+        }
 
       if (applicationStatus && applicationStatus === 'attive') {
         baseCriteria.and(new Criteria().isNotNull('jconon_application:progressivo_iscrizione_elenco').build());
@@ -282,7 +340,7 @@ console.log("main");
         baseCriteria.and(new Criteria().equals('jconon_application:stato_domanda', 'C').build());
         baseCriteria.and(new Criteria().isNotNull('jconon_application:esclusione_rinuncia').build());
       }
-
+      console.log("filtrro prova "+baseCriteria.toString());
       if (callId) {
         if (cache['query.index.enable']) {
             criteria.inTree(callId);

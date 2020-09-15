@@ -415,12 +415,13 @@ console.log(" opts "+opts+" j  "+JSON.stringify(opts));
 
       if(settings.objectTypes[0].key.includes("esperienza_professionale")){
     	  opts.objectTypes[0].defaultLabel="Esperienza professionale/Esperienza dirigenziale nella PA";
-		
+    	  buttonUpload.css('margin-left','140px');
+    	  buttonRefresh.css('margin-left','260px');
       divSimpleControl
 	  
-		.append('<span style="padding-left: 350px; position: absolute; font-weight: bold; margin-top: 10px;" >Tipologia</span><br style="line-height: 47px;">')
+		.append('<span style="padding-left: 350px; position: absolute; font-weight: bold; margin-top: 10px;" >Tipologia</span><p style="height: 30px;">')
 
-       .append('  <span style="font-weight: bold;padding-left: 10px; width: 50%;display: inline-block;"">'+opts.objectTypes[0].defaultLabel+'</span>')
+       .append('  <span style="font-weight: bold;padding-left: 10px; width: 60%;display: inline-block;"">'+opts.objectTypes[0].defaultLabel+'</span>')
 		
 		.append(buttonUpload)
 
@@ -432,7 +433,7 @@ console.log(" opts "+opts+" j  "+JSON.stringify(opts));
       }else{
     	  divSimpleControl
     	  
-  		.append('<span style="padding-left: 350px; position: absolute; font-weight: bold; margin-top: 10px;" >Tipologia</span><br style="line-height: 47px;">')
+  		.append('<span style="padding-left: 350px; position: absolute; font-weight: bold; margin-top: 10px;" >Tipologia</span><p style="height: 30px;">')
 
          .append('  <span style="font-weight: bold;padding-left: 10px; width: 50%;display: inline-block;"">'+opts.objectTypes[0].defaultLabel+'</span>')
   		

@@ -829,6 +829,7 @@ define(['jquery', 'header', 'i18n', 'cnr/cnr.ui', 'cnr/cnr.bulkinfo', 'json!comm
     });
   });
   $('#send').click(function () {
+	  
 	  if(metadata["jconon_application:esclusione_rinuncia"] != null && metadata["jconon_application:esclusione_rinuncia"].includes("E")){
 			var data=new Date(metadata["jconon_application:data_rimozione_elenco"]);
 			var dataCorrente=new Date();
@@ -946,7 +947,7 @@ if((metadata["jconon_application:esclusione_rinuncia"] == null ) || (metadata["j
 				  htext = $('<h2>Carica la domanda firmata </h2>'),
 				  inputFile = $('<input  type="file" name="domandapdf"/>'),
 				//  previewPdf=$('<br><br><embed   id="pdfPreview" src="" width="350"  height="300">'),
-				  previewPdf=$('<br><br><iframe   id="pdfPreview" src="" width="350"  height="300" style="display: none;">'),
+				  previewPdf=$('<br><br><iframe   id="pdfPreview" src="" width="500"  height="400" style="display: none;">'),
 				  removeButton=$('<a href="#" class="btn fileupload-exists disabled" data-dismiss="fileupload">Rimuovi</a>'),
 				  btnPrimary,
 				  m;
@@ -975,7 +976,7 @@ if((metadata["jconon_application:esclusione_rinuncia"] == null ) || (metadata["j
 					m.find( ".submit" ).css("position", "relative");
 					m.find( ".submit" ).css("right", "-80px");
 					btnPrimary = m.find(".modal-footer").find(".btn-primary").next();
-					btnPrimary.css("right", "440px");
+					btnPrimary.css("right", "570px");
 					btnPrimary.text("Annulla");
 					btnPrimary.css("position", "relative");
 					
@@ -1009,7 +1010,9 @@ if((metadata["jconon_application:esclusione_rinuncia"] == null ) || (metadata["j
 				m.find("#pdfPreview").css("display","initial");
 			  }
 			 // $(".modal").css("height","350px");
-			m.find(".modal-body").css("max-height","300px");
+			m.find(".modal-body").css("max-height","450px");
+			m.css("width","700px");
+			m.find(".modal-body").css("width","670px");
 			m.find( ".submit" ).removeClass("disabled");
 		//	m.find(".input-xlarge").css("width","auto");
             });
