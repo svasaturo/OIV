@@ -201,7 +201,9 @@ console.log("main");
 //	        .append(('Profilo utente - ultima modifica ' + CNR.Date.format(dataUltimaModifica, '-', dateFormat)) );
 //	    return $('<div>').append(item).html();
 //	  });
-  
+  /* COMMENTATO PER SECONDO RILASCIO
+   * -----INIZIO
+   
   Handlebars.registerHelper('applicationStatus', function declare(code, dataInvioDomanda, dataUltimaModifica, dataScadenza) {
 	  if(code === 'P' || code === 'I'){
 		  var dateFormat = "DD/MM/YYYY HH:mm:ss",
@@ -247,8 +249,23 @@ console.log("main");
     return $('<div>').append(item).html();
   });
   
+  -------FINE
+  */
   
-
+// AGGIUNTO PER SECONDO RILASCIO 
+  Handlebars.registerHelper('applicationStatus', function declare(code, dataInvioDomanda, dataUltimaModifica, dataScadenza) {
+	    var dateFormat = "DD/MM/YYYY HH:mm:ss",
+	      isTemp = (code === 'P' || code === 'I'),
+	      msg = i18n['label.application.stato.' + (code === 'I' ? 'P' : code)],
+	      item = $('<label class="label"></label>')
+	        .addClass(isTemp ? 'label-info' : 'label-success')
+	        .addClass(dataScadenza !== "" && (moment().diff(dataScadenza, 'days') > -7) ? 'animated flash' : '')
+	        .append(msg)
+	        .append(isTemp ? (' - ultima modifica ' + CNR.Date.format(dataUltimaModifica, '-', dateFormat)) : (' il ' + CNR.Date.format(dataInvioDomanda, '-', dateFormat)));
+	    return $('<div>').append(item).html();
+	  });
+// ----FINE  
+  
   Handlebars.registerHelper('iscrizioneElenco', function declare(numero, data, fascia_professionale_validata, fascia_professionale_attribuita) {
     var dateFormat = "DD/MM/YYYY",
       fascia = fascia_professionale_validata || fascia_professionale_attribuita,
@@ -478,23 +495,18 @@ console.log("main");
                 displayAttachments(el, 'jconon_attachment:generic_document', Application.displayTitoli,undefined,'actions.attachments');
               };
             }
-            
-            
+            if (callData['jconon_call:elenco_sezioni_domanda'].indexOf('affix_tabCurriculum') >= 0) {
+              customButtons.curriculum = function () {
+                //Curriculum
+                displayAttachments(el, 'jconon_attachment:cv_element', Application.displayCurriculum, 'actions.curriculum');
+              };
+            }
             if (callData['jconon_call:elenco_sezioni_domanda'].indexOf('affix_tabSchedaAnonima') >= 0) {
               customButtons.schedaAnonima = function () {
                 //Scheda Anonima
                 displayAttachments(el, 'jconon_scheda_anonima:document', ApplicationFp.displayEsperienzeOIV, 'actions.schedaAnonima');
               };
             }
-            
-            if (callData['jconon_call:elenco_sezioni_domanda'].indexOf('affix_tabCurriculum') >= 0) {
-                customButtons.curriculum = function () {
-                  //Curriculum
-                  displayAttachments(el, 'jconon_attachment:cv_element', Application.displayCurriculum, 'actions.curriculum');
-                };
-              }
-            
-            
             if (callData['jconon_call:elenco_sezioni_domanda'].indexOf('affix_tabElencoProdotti') >= 0) {
               customButtons.productList = function () {
                 //Elenco Prodotti
@@ -508,378 +520,90 @@ console.log("main");
               };
             }
             //  Modifica
-//            customButtons.edit = function () {
-//              window.location = jconon.URL.application.manage + '?callId=' + callData['cmis:objectId'] + '&applicationId=' + el['cmis:objectId'];
-//				
-//            };
-           
-			
-			
-		    if (common.User.admin || Call.isRdP(callData['jconon_call:rdp'])) {
-                customButtons.comunicazione = function () {
-					console.log("invia");
-                  var bulkInfoAllegato = allegaDocumentoAllaDomanda('D_jconon_comunicazione_attachment',el['cmis:objectId'],
-                    
-                    function (attachmentsData, data) {
-                        $.ajax({
-                            url: cache.baseUrl + "/rest/application-fp/message",
-                            type: 'POST',
-                            data: {
-                              idDomanda : el['cmis:objectId'],
-                              nodeRefDocumento : data !== undefined ? data['alfcmis:nodeRef'] : undefined
-                            },
-                            success: function (data) {
-                               $('#applyFilter').click();
-                            },
-                            error: jconon.error
-                        });
-                    }, true, function (modal) {
-                        $(window).on('shown.bs.modal', function (event) {
-                            var nome = el['jconon_application:nome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
-                                return $word.toUpperCase();
-                            }), cognome = el['jconon_application:cognome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
-                                return $word.toUpperCase();
-                            });
-                            modal.find('#oggetto_notifica_email').val(i18n['app.name'] + ' - ' + i18n['mail.subject.comunicazione']);
-                            var testo = i18n['mail.confirm.application.1'];
-                                testo += el['jconon_application:sesso'] === 'M' ? ' dott.' : ' dott.ssa';
-                                testo += ' <b style="text-transform: capitalize;">' + nome + ' ' + cognome + '</b>,';
-                                testo += callData['jconon_call:requisiti_en'];
-
-                            var textarea = modal.find('#testo_notifica_email');
-                            textarea.val(testo);
-                            var ck = textarea.ckeditor({
-                                toolbarGroups: [
-                                    { name: 'clipboard', groups: ['clipboard'] },
-                                    { name: 'basicstyles', groups: ['basicstyles'] },
-                                    { name: 'paragraph', groups: ['list', 'align'] }],
-                                    removePlugins: 'elementspath'
-                            });
-                            ck.editor.on('change', function () {
-                              var html = ck.val();
-                              textarea.parent().find('control-group widget').data('value', html || null);
-                            });
-
-                            ck.editor.on('setData', function (event) {
-                              var html = event.data.dataValue;
-                              textarea.parent().find('control-group widget').data('value', html || null);
-                            });
-                        });
-                    }
-                  , false, false, true);
-                };
+            customButtons.edit = function () {
+              window.location = jconon.URL.application.manage + '?callId=' + callData['cmis:objectId'] + '&applicationId=' + el['cmis:objectId'];
 				
-	
+            };
+			
+			customButtons.visualizza_comunicazioni = function () {
+				console.log("visualizza "+JSON.stringify(el));
+				console.log("visualizza "+'jconon_attachment:generic_document');
 				
-				customButtons.visualizza_comunicazioni = function () {
-					console.log("visualizza "+JSON.stringify(el));
-					console.log("visualizza "+'jconon_attachment:generic_document');
+				displayAttachments(el, 'jconon_attachment:generic_document',  Application.displayComunicazioni, 'actions.visualizza_comunicazioni');
 					
-                   displayAttachments(el, 'jconon_attachment:generic_document',  Application.displayComunicazioni, 'actions.visualizza_comunicazioni');
+			};
+			customButtons.rinnovo = function () {
+			//	URIBuilder builder = new URIBuilder( jconon.URL.application.manage + '?callId=' + callData['cmis:objectId'] + '&applicationId=' + el['cmis:objectId']);
+			//	builder.setParameter("rinnovo", "true");
 				
-			  };
-			  
-			  
-				
-				customButtons.note = function () {
-					console.log("note");
-                var bulkInfoAllegato = allegaDocumentoAllaDomanda('D_jconon_note_attachment',
-                  el['cmis:objectId'],
-                  function (attachmentsData, data) {
-                      $.ajax({
-                          url: cache.baseUrl + "/rest/application-fp/message",
-                          type: 'POST',
-                          data: {
-                            idDomanda : el['cmis:objectId'],
-                            nodeRefDocumento : data !== undefined ? data['alfcmis:nodeRef'] : undefined
+	            //  window.location = jconon.URL.application.rinnovo + '?callId=' + callData['cmis:objectId'] + '&applicationId=' + el['cmis:objectId']+'&userId='+el['jconon_application:user']+'&rinnovo=true';
+//				buildUrl('http://www.example.com/foo?bar=baz', 'test', '123'); 
+//				window.location=builder;
+			};
+			
+			
+            if (common.User.admin || Call.isRdP(callData['jconon_call:rdp'])) {
+              customButtons.assegna_fascia = function () {
+				  console.log("assegna fascia");
+                var content = $("<div></div>"),
+                  bulkinfo = new BulkInfo({
+                  target: content,
+                  path: "P:jconon_application:aspect_fascia_professionale_attribuita",
+                  objectId: el['cmis:objectId'],
+                  formclass: 'form-inline',
+                  name: 'default',
+                  callback : {
+                    afterCreateForm: function (form) {
+                      form.find('#button_fascia_professionale_esegui_calcolo').off('click').on('click', function () {
+                        $.ajax({
+                          url: cache.baseUrl + "/rest/application-fp/applications-ricalcola-fascia",
+                          type: 'GET',
+                          data:  {
+                            'applicationId' : el['cmis:objectId']
                           },
                           success: function (data) {
-                             $('#applyFilter').click();
+							  console.log(" fascia "+JSON.stringify(data)+" v   - "+data);
+                            form.find('#fascia_professionale_validata').val(data['jconon_application:fascia_professionale_attribuita']);
+                            UI.success("La fascia ricalcolata è: " + data['jconon_application:fascia_professionale_attribuita']);
                           },
-                          error: jconon.error
-                      });
-                  }, true, function (modal) {
-                   
-                	 modal.find('#D_jconon_note_attachment #default .widget').css("display","none");
-               //  	modal.find("#fl_invia_notifica_email button[data-value='false']").removeClass("active");
-                      $(window).on('shown.bs.modal', function (event) {
-                      	modal.find("#fl_invia_notifica_email button[data-value='true']").click();
-                      	modal.find("label[for='oggetto_notifica_email']").text("Titolo")
-                      //	 modal.find('#D_jconon_note_attachment #default .widget').css("display","none");
-                          var nome = el['jconon_application:nome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
-                              return $word.toUpperCase();
-                          }), cognome = el['jconon_application:cognome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
-                              return $word.toUpperCase();
-                          });
-                          modal.find('#oggetto_notifica_email').val(i18n['note.subject'] );
-             /*             var testo = i18n['mail.confirm.application.1'];
-                              testo += el['jconon_application:sesso'] === 'M' ? ' dott.' : ' dott.ssa';
-                              testo += ' <b style="text-transform: capitalize;">' + nome + ' ' + cognome + '</b>,';
-                              testo += callData['jconon_call:requisiti_en']; */
-
-                          var textarea = modal.find('#testo_notifica_email');
-                     //     textarea.val(testo);
-                          var ck = textarea.ckeditor({
-                              toolbarGroups: [
-                                  { name: 'clipboard', groups: ['clipboard'] },
-                                  { name: 'basicstyles', groups: ['basicstyles'] },
-                                  { name: 'paragraph', groups: ['list', 'align'] }],
-                                  removePlugins: 'elementspath'
-                          });
-                          ck.editor.on('change', function () {
-                            var html = ck.val();
-                            textarea.parent().find('control-group widget').data('value', html || null);
-                          });
-
-                          ck.editor.on('setData', function (event) {
-                            var html = event.data.dataValue;
-                            textarea.parent().find('control-group widget').data('value', html || null);
-                          });
-                      });
-                    //  $("#D_jconon_note_attachment #default .widget").css("display","none");
-
-                  }
-                , false, false, true);
-              };
-				
-				customButtons.visualizza_note = function () {
-					console.log("visualizza "+JSON.stringify(el));
-					console.log("visualizza note "+'jconon_attachment:generic_document');
-					
-                 displayAttachments(el, 'jconon_attachment:generic_document',  Application.displayNote, 'actions.visualizza_note');
-				
-			  };
-      
-                console.log("inserisci "+el['jconon_application:progressivo_iscrizione_elenco']);
-                
-                customButtons.assegna_fascia = function () {
-  				  console.log("assegna fascia");
-                  var content = $("<div></div>"),
-                    bulkinfo = new BulkInfo({
-                    target: content,
-                    path: "P:jconon_application:aspect_fascia_professionale_attribuita",
-                    objectId: el['cmis:objectId'],
-                    formclass: 'form-inline',
-                    name: 'default',
-                    callback : {
-                      afterCreateForm: function (form) {
-                        form.find('#button_fascia_professionale_esegui_calcolo').off('click').on('click', function () {
-                          $.ajax({
-                            url: cache.baseUrl + "/rest/application-fp/applications-ricalcola-fascia",
-                            type: 'GET',
-                            data:  {
-                              'applicationId' : el['cmis:objectId']
-                            },
-                            success: function (data) {
-  							  console.log(" fascia "+JSON.stringify(data)+" v   - "+data);
-                              form.find('#fascia_professionale_validata').val(data['jconon_application:fascia_professionale_attribuita']);
-                              UI.success("La fascia ricalcolata è: " + data['jconon_application:fascia_professionale_attribuita']);
-                            },
-                            error: URL.errorFn
-                          });
+                          error: URL.errorFn
                         });
-                      }
+                      });
                     }
-                  });
-                  bulkinfo.render();
-                  UI.modal('<i class="icon-edit"></i> Assegna Fascia', content, function () {
-                    var close = UI.progress(), d = bulkinfo.getData();
-                    d.push(
-                      {
-                        id: 'cmis:objectId',
-                        name: 'cmis:objectId',
-                        value: el['cmis:objectId']
-                      },
-                      {
-                        name: 'aspect', 
-                        value: 'P:jconon_application:aspect_fascia_professionale_attribuita'
-                      },
-                      {
-                        name: 'jconon_application:fascia_professionale_esegui_calcolo',
-                        value: false
-                      }                        
-                    );
-                    jconon.Data.application.main({
-                      type: 'PUT',
-                      data: d,
-                      success: function (data) {
-                        UI.success(i18n['message.aggiornamento.fascia.eseguito']);
-                        $('#applyFilter').click();
-                      },
-                      complete: close,
-                      error: URL.errorFn
-                    });
-                  });
-                };
-                
-                
-                
-         //      if (el['jconon_application:progressivo_iscrizione_elenco'] == '') {
-                  customButtons.inserisci = function () {
-                    UI.confirm(i18n.prop('message.confirm.iscrizione.elenco', el['jconon_application:nome'], el['jconon_application:cognome']), function () {
-                      var close = UI.progress();
-                      jconon.Data.application.readmission({
-                        type: 'POST',
-                        data: {
-                          nodeRef : el['cmis:objectId']
-                        },
-                        success: function () {
-                          URL.Data.proxy.childrenGroup({
-                            type: 'POST',
-                            data: JSON.stringify({
-                              'parent_group_name': 'GROUP_ELENCO_OIV',
-                              'child_name': el['jconon_application:user']
-                            }),
-                            contentType: 'application/json'
-                          });
-                          UI.success('Iscrizione avvenuta correttamente.');
-                          $('#applyFilter').click();
-                        },
-                        complete: close,
-                        error: jconon.error
-                      });                      
-                    });  
                   }
-                  
-                  
-                  if (el['jconon_application:esclusione_rinuncia'] !== 'E') {
-                      customButtons.escludi = function () {
-                        var bulkInfoAllegato = allegaDocumentoAllaDomanda('D_jconon_esclusione_attachment',
-                          el['cmis:objectId'],
-                          function (attachmentsData, data) {
-                            jconon.Data.application.reject({
-                              type: 'POST',
-                              data: {
-                                nodeRef : el['cmis:objectId'],
-                                nodeRefDocumento : data['alfcmis:nodeRef']
-                              },
-                              success: function () {
-                                $('#applyFilter').click();
-                              },
-                              error: jconon.error
-                            });
-                          }, true, function (modal) {
-                              $(window).on('shown.bs.modal', function (event) {
-  							
-                                  var nome = el['jconon_application:nome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
-                                      return $word.toUpperCase();
-                                  }), cognome = el['jconon_application:cognome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
-                                      return $word.toUpperCase();
-                                  });
-                                  modal.find('#oggetto_notifica_email').val(i18n['app.name'] + ' - ' + i18n['mail.subject.esclusione']);
-                                  var testo = i18n['mail.confirm.application.1'];
-                                      testo += el['jconon_application:sesso'] === 'M' ? ' dott.' : ' dott.ssa';
-                                      testo += ' <b style="text-transform: capitalize;">' + nome + ' ' + cognome + '</b>,';
-                                      testo += callData['jconon_call:requisiti_en'];
-
-                                  var textarea = modal.find('#testo_notifica_email');
-                                  textarea.val(testo);
-                                  var ck = textarea.ckeditor({
-                                      toolbarGroups: [
-                                          { name: 'clipboard', groups: ['clipboard'] },
-                                          { name: 'basicstyles', groups: ['basicstyles'] },
-                                          { name: 'paragraph', groups: ['list', 'align'] }],
-                                          removePlugins: 'elementspath'
-                                  });
-                                  ck.editor.on('change', function () {
-                                    var html = ck.val();
-                                    textarea.parent().find('control-group widget').data('value', html || null);
-                                  });
-
-                                  ck.editor.on('setData', function (event) {
-                                    var html = event.data.dataValue;
-                                    textarea.parent().find('control-group widget').data('value', html || null);
-                                  });
-                              });
-                          }
-                        );
-                      };
-                  
-                  
-               // }
-              }
-            }    
-			
- if (common.User.id === el['jconon_application:user']) {
-				
-				customButtons.visualizza_comunicazioni = function () {
-					console.log("visualizza "+JSON.stringify(el));
-					console.log("visualizza "+'jconon_attachment:generic_document');
-					
-					displayAttachments(el, 'jconon_attachment:generic_document',  Application.displayComunicazioni, 'actions.visualizza_comunicazioni');
-						
-				};
+                });
+                bulkinfo.render();
+                UI.modal('<i class="icon-edit"></i> Assegna Fascia', content, function () {
+                  var close = UI.progress(), d = bulkinfo.getData();
+                  d.push(
+                    {
+                      id: 'cmis:objectId',
+                      name: 'cmis:objectId',
+                      value: el['cmis:objectId']
+                    },
+                    {
+                      name: 'aspect', 
+                      value: 'P:jconon_application:aspect_fascia_professionale_attribuita'
+                    },
+                    {
+                      name: 'jconon_application:fascia_professionale_esegui_calcolo',
+                      value: false
+                    }                        
+                  );
+                  jconon.Data.application.main({
+                    type: 'PUT',
+                    data: d,
+                    success: function (data) {
+                      UI.success(i18n['message.aggiornamento.fascia.eseguito']);
+                      $('#applyFilter').click();
+                    },
+                    complete: close,
+                    error: URL.errorFn
+                  });
+                });
+              };
             }
-			
-			
-			
-			
-//            if (common.User.admin || Call.isRdP(callData['jconon_call:rdp'])) {
-//              customButtons.assegna_fascia = function () {
-//				  console.log("assegna fascia");
-//                var content = $("<div></div>"),
-//                  bulkinfo = new BulkInfo({
-//                  target: content,
-//                  path: "P:jconon_application:aspect_fascia_professionale_attribuita",
-//                  objectId: el['cmis:objectId'],
-//                  formclass: 'form-inline',
-//                  name: 'default',
-//                  callback : {
-//                    afterCreateForm: function (form) {
-//                      form.find('#button_fascia_professionale_esegui_calcolo').off('click').on('click', function () {
-//                        $.ajax({
-//                          url: cache.baseUrl + "/rest/application-fp/applications-ricalcola-fascia",
-//                          type: 'GET',
-//                          data:  {
-//                            'applicationId' : el['cmis:objectId']
-//                          },
-//                          success: function (data) {
-//							  console.log(" fascia "+JSON.stringify(data)+" v   - "+data);
-//                            form.find('#fascia_professionale_validata').val(data['jconon_application:fascia_professionale_attribuita']);
-//                            UI.success("La fascia ricalcolata è: " + data['jconon_application:fascia_professionale_attribuita']);
-//                          },
-//                          error: URL.errorFn
-//                        });
-//                      });
-//                    }
-//                  }
-//                });
-//                bulkinfo.render();
-//                UI.modal('<i class="icon-edit"></i> Assegna Fascia', content, function () {
-//                  var close = UI.progress(), d = bulkinfo.getData();
-//                  d.push(
-//                    {
-//                      id: 'cmis:objectId',
-//                      name: 'cmis:objectId',
-//                      value: el['cmis:objectId']
-//                    },
-//                    {
-//                      name: 'aspect', 
-//                      value: 'P:jconon_application:aspect_fascia_professionale_attribuita'
-//                    },
-//                    {
-//                      name: 'jconon_application:fascia_professionale_esegui_calcolo',
-//                      value: false
-//                    }                        
-//                  );
-//                  jconon.Data.application.main({
-//                    type: 'PUT',
-//                    data: d,
-//                    success: function (data) {
-//                      UI.success(i18n['message.aggiornamento.fascia.eseguito']);
-//                      $('#applyFilter').click();
-//                    },
-//                    complete: close,
-//                    error: URL.errorFn
-//                  });
-//                });
-//              };
-//            }
             if (el['jconon_application:stato_domanda'] === 'P') {
-            	customButtons.edit = function () {
-  	              window.location = jconon.URL.application.manage + '?callId=' + callData['cmis:objectId'] + '&applicationId=' + el['cmis:objectId'];
-  					
-                };
               // provvisoria
               if (bandoInCorso) {
                 if (common.User.admin || common.User.id === el['jconon_application:user']) {
@@ -1074,23 +798,235 @@ console.log("main");
                     );
                   };
                 }
+                if (common.User.admin || Call.isRdP(callData['jconon_call:rdp'])) {
+                    customButtons.comunicazione = function () {
+						console.log("invia");
+                      var bulkInfoAllegato = allegaDocumentoAllaDomanda('D_jconon_comunicazione_attachment',el['cmis:objectId'],
                         
+                        function (attachmentsData, data) {
+                            $.ajax({
+                                url: cache.baseUrl + "/rest/application-fp/message",
+                                type: 'POST',
+                                data: {
+                                  idDomanda : el['cmis:objectId'],
+                                  nodeRefDocumento : data !== undefined ? data['alfcmis:nodeRef'] : undefined
+                                },
+                                success: function (data) {
+                                   $('#applyFilter').click();
+                                },
+                                error: jconon.error
+                            });
+                        }, true, function (modal) {
+                            $(window).on('shown.bs.modal', function (event) {
+                                var nome = el['jconon_application:nome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
+                                    return $word.toUpperCase();
+                                }), cognome = el['jconon_application:cognome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
+                                    return $word.toUpperCase();
+                                });
+                                modal.find('#oggetto_notifica_email').val(i18n['app.name'] + ' - ' + i18n['mail.subject.comunicazione']);
+                                var testo = i18n['mail.confirm.application.1'];
+                                    testo += el['jconon_application:sesso'] === 'M' ? ' dott.' : ' dott.ssa';
+                                    testo += ' <b style="text-transform: capitalize;">' + nome + ' ' + cognome + '</b>,';
+                                    testo += callData['jconon_call:requisiti_en'];
+
+                                var textarea = modal.find('#testo_notifica_email');
+                                textarea.val(testo);
+                                var ck = textarea.ckeditor({
+                                    toolbarGroups: [
+                                        { name: 'clipboard', groups: ['clipboard'] },
+                                        { name: 'basicstyles', groups: ['basicstyles'] },
+                                        { name: 'paragraph', groups: ['list', 'align'] }],
+                                        removePlugins: 'elementspath'
+                                });
+                                ck.editor.on('change', function () {
+                                  var html = ck.val();
+                                  textarea.parent().find('control-group widget').data('value', html || null);
+                                });
+
+                                ck.editor.on('setData', function (event) {
+                                  var html = event.data.dataValue;
+                                  textarea.parent().find('control-group widget').data('value', html || null);
+                                });
+                            });
+                        }
+                      , false, false, true);
+                    };
+					
+					
+					
+					customButtons.note = function () {
+						console.log("note");
+                      var bulkInfoAllegato = allegaDocumentoAllaDomanda('D_jconon_note_attachment',
+                        el['cmis:objectId'],
+                        function (attachmentsData, data) {
+                            $.ajax({
+                                url: cache.baseUrl + "/rest/application-fp/message",
+                                type: 'POST',
+                                data: {
+                                  idDomanda : el['cmis:objectId'],
+                                  nodeRefDocumento : data !== undefined ? data['alfcmis:nodeRef'] : undefined
+                                },
+                                success: function (data) {
+                                   $('#applyFilter').click();
+                                },
+                                error: jconon.error
+                            });
+                        }, true, function (modal) {
+                         
+                      	 modal.find('#D_jconon_note_attachment #default .widget').css("display","none");
+                     //  	modal.find("#fl_invia_notifica_email button[data-value='false']").removeClass("active");
+                            $(window).on('shown.bs.modal', function (event) {
+                            	modal.find("#fl_invia_notifica_email button[data-value='true']").click();
+                            	modal.find("label[for='oggetto_notifica_email']").text("Titolo")
+                            //	 modal.find('#D_jconon_note_attachment #default .widget').css("display","none");
+                                var nome = el['jconon_application:nome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
+                                    return $word.toUpperCase();
+                                }), cognome = el['jconon_application:cognome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
+                                    return $word.toUpperCase();
+                                });
+                                modal.find('#oggetto_notifica_email').val(i18n['note.subject'] );
+                   /*             var testo = i18n['mail.confirm.application.1'];
+                                    testo += el['jconon_application:sesso'] === 'M' ? ' dott.' : ' dott.ssa';
+                                    testo += ' <b style="text-transform: capitalize;">' + nome + ' ' + cognome + '</b>,';
+                                    testo += callData['jconon_call:requisiti_en']; */
+
+                                var textarea = modal.find('#testo_notifica_email');
+                           //     textarea.val(testo);
+                                var ck = textarea.ckeditor({
+                                    toolbarGroups: [
+                                        { name: 'clipboard', groups: ['clipboard'] },
+                                        { name: 'basicstyles', groups: ['basicstyles'] },
+                                        { name: 'paragraph', groups: ['list', 'align'] }],
+                                        removePlugins: 'elementspath'
+                                });
+                                ck.editor.on('change', function () {
+                                  var html = ck.val();
+                                  textarea.parent().find('control-group widget').data('value', html || null);
+                                });
+
+                                ck.editor.on('setData', function (event) {
+                                  var html = event.data.dataValue;
+                                  textarea.parent().find('control-group widget').data('value', html || null);
+                                });
+                            });
+                          //  $("#D_jconon_note_attachment #default .widget").css("display","none");
+
+                        }
+                      , false, false, true);
+                    };
+					
+					customButtons.visualizza_note = function () {
+						console.log("visualizza "+JSON.stringify(el));
+						console.log("visualizza note "+'jconon_attachment:generic_document');
+						
+                       displayAttachments(el, 'jconon_attachment:generic_document',  Application.displayNote, 'actions.visualizza_note');
+					
+				  };
+					
+					
+					
+					
+					
+					
+					customButtons.visualizza_comunicazioni = function () {
+						console.log("visualizza "+JSON.stringify(el));
+						console.log("visualizza "+'jconon_attachment:generic_document');
+						
+                       displayAttachments(el, 'jconon_attachment:generic_document',  Application.displayComunicazioni, 'actions.visualizza_comunicazioni');
+					
+				  };
+					
+					
+                  if (el['jconon_application:esclusione_rinuncia'] !== 'E') {
+                    customButtons.escludi = function () {
+                      var bulkInfoAllegato = allegaDocumentoAllaDomanda('D_jconon_esclusione_attachment',
+                        el['cmis:objectId'],
+                        function (attachmentsData, data) {
+                          jconon.Data.application.reject({
+                            type: 'POST',
+                            data: {
+                              nodeRef : el['cmis:objectId'],
+                              nodeRefDocumento : data['alfcmis:nodeRef']
+                            },
+                            success: function () {
+                              $('#applyFilter').click();
+                            },
+                            error: jconon.error
+                          });
+                        }, true, function (modal) {
+                            $(window).on('shown.bs.modal', function (event) {
+							
+                                var nome = el['jconon_application:nome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
+                                    return $word.toUpperCase();
+                                }), cognome = el['jconon_application:cognome'].replace(/^(.)|(\s|\-)(.)/g, function($word) {
+                                    return $word.toUpperCase();
+                                });
+                                modal.find('#oggetto_notifica_email').val(i18n['app.name'] + ' - ' + i18n['mail.subject.esclusione']);
+                                var testo = i18n['mail.confirm.application.1'];
+                                    testo += el['jconon_application:sesso'] === 'M' ? ' dott.' : ' dott.ssa';
+                                    testo += ' <b style="text-transform: capitalize;">' + nome + ' ' + cognome + '</b>,';
+                                    testo += callData['jconon_call:requisiti_en'];
+
+                                var textarea = modal.find('#testo_notifica_email');
+                                textarea.val(testo);
+                                var ck = textarea.ckeditor({
+                                    toolbarGroups: [
+                                        { name: 'clipboard', groups: ['clipboard'] },
+                                        { name: 'basicstyles', groups: ['basicstyles'] },
+                                        { name: 'paragraph', groups: ['list', 'align'] }],
+                                        removePlugins: 'elementspath'
+                                });
+                                ck.editor.on('change', function () {
+                                  var html = ck.val();
+                                  textarea.parent().find('control-group widget').data('value', html || null);
+                                });
+
+                                ck.editor.on('setData', function (event) {
+                                  var html = event.data.dataValue;
+                                  textarea.parent().find('control-group widget').data('value', html || null);
+                                });
+                            });
+                        }
+                      );
+                    };
+                    
+            
+                    console.log("inserisci "+el['jconon_application:progressivo_iscrizione_elenco']);
+                    
+             //      if (el['jconon_application:progressivo_iscrizione_elenco'] == '') {
+                      customButtons.inserisci = function () {
+                        UI.confirm(i18n.prop('message.confirm.iscrizione.elenco', el['jconon_application:nome'], el['jconon_application:cognome']), function () {
+                          var close = UI.progress();
+                          jconon.Data.application.readmission({
+                            type: 'POST',
+                            data: {
+                              nodeRef : el['cmis:objectId']
+                            },
+                            success: function () {
+                              URL.Data.proxy.childrenGroup({
+                                type: 'POST',
+                                data: JSON.stringify({
+                                  'parent_group_name': 'GROUP_ELENCO_OIV',
+                                  'child_name': el['jconon_application:user']
+                                }),
+                                contentType: 'application/json'
+                              });
+                              UI.success('Iscrizione avvenuta correttamente.');
+                              $('#applyFilter').click();
+                            },
+                            complete: close,
+                            error: jconon.error
+                          });                      
+                        });  
+                      }
+                   // }
+                  }
+                }                
 				
 				
-                customButtons.edit = function () {
-  	              window.location = jconon.URL.application.manage + '?callId=' + callData['cmis:objectId'] + '&applicationId=' + el['cmis:objectId'];
-  					
-  	        };
 				
-  	      customButtons.rinnovo = function () {
-  			//	URIBuilder builder = new URIBuilder( jconon.URL.application.manage + '?callId=' + callData['cmis:objectId'] + '&applicationId=' + el['cmis:objectId']);
-  			//	builder.setParameter("rinnovo", "true");
-  				
-  	            //  window.location = jconon.URL.application.rinnovo + '?callId=' + callData['cmis:objectId'] + '&applicationId=' + el['cmis:objectId']+'&userId='+el['jconon_application:user']+'&rinnovo=true';
-//  				buildUrl('http://www.example.com/foo?bar=baz', 'test', '123'); 
-//  				window.location=builder;
-  			};
-  			
+				
+				
 				
               } else {
                 if (el['jconon_application:esclusione_rinuncia'] !== 'E' && 
@@ -1114,10 +1050,6 @@ console.log("main");
                       );
                   };
                 }
-                
-            	
-
-                
                 if (el['jconon_application:esclusione_rinuncia'] === 'E' ||
                     el['jconon_application:esclusione_rinuncia'] === 'N' ||
                     el['jconon_application:esclusione_rinuncia'] === 'R') {
@@ -1160,8 +1092,6 @@ console.log("main");
                       );
                   };
                 }
-                
-                
                 dropdowns['<i class="icon-upload"></i> Comunicazione al candidato'] = function () {
                   allegaDocumentoAllaDomanda('D:jconon_comunicazione:attachment', el['cmis:objectId']);
                 };
@@ -1292,31 +1222,23 @@ console.log("main");
               }, customButtons, {
                 print: 'icon-print',
                 attachments : 'icon-download-alt',
-                
-                schedaAnonima: 'icon-file-alt',
-                
                 curriculum: 'icon-file-alt',
-                comunicazioni: 'icon-envelope text-info',
-				visualizza_comunicazioni: 'icon-eye-open',
-				note: 'icon-edit',
-				visualizza_note: 'icon-eye-open',
-				assegna_fascia: 'icon-edit',
-				inserisci: 'icon-arrow-up',
-				escludi: 'icon-arrow-down',
-				
+                schedaAnonima: 'icon-file-alt',
                 productList: 'icon-list',
                 productSelected: 'icon-list-ol',
                 reopen: 'icon-share',
                 modificaProfilo : 'icon-share',
                 scheda_valutazione: 'icon-table',
                 operations: 'icon-list',
-                
-               
+                escludi: 'icon-arrow-down',
+                comunicazioni: 'icon-envelope text-info',
+				visualizza_comunicazioni: 'icon-eye-open',
 				rinnovo: 'icon-eye-open',
-				
+				note: 'icon-edit',
+				visualizza_note: 'icon-eye-open',
                 comunicazione: 'icon-envelope text-success',
-                
-               
+                inserisci: 'icon-arrow-up',
+                assegna_fascia: 'icon-edit',
                 preavviso_rigetto: 'icon-dashboard text-error',
                 soccorso_istruttorio: 'icon-dashboard text-error'
               }, undefined, true).appendTo(target);
