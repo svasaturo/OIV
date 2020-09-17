@@ -394,18 +394,22 @@ define(['jquery', 'header', 'json!common', 'cnr/cnr.bulkinfo', 'cnr/cnr.search',
                 displayAttachments(el, 'jconon_attachment:generic_document', Application.displayTitoli);
               };
             }
+            
+            if (callData['jconon_call:elenco_sezioni_domanda'].indexOf('affix_tabSchedaAnonima') >= 0) {
+                customButtons.schedaAnonima = function () {
+                  //Scheda Anonima
+                  displayAttachments(el, 'jconon_scheda_anonima:document', ApplicationFp.displayEsperienzeOIV, 'actions.schedaAnonima');
+                };
+            }
+            
             if (callData['jconon_call:elenco_sezioni_domanda'].indexOf('affix_tabCurriculum') >= 0) {
               customButtons.curriculum = function () {
                 //Curriculum
                 displayAttachments(el, 'jconon_attachment:cv_element', Application.displayCurriculum, 'actions.curriculum');
               };
             }
-            if (callData['jconon_call:elenco_sezioni_domanda'].indexOf('affix_tabSchedaAnonima') >= 0) {
-              customButtons.schedaAnonima = function () {
-                //Scheda Anonima
-                displayAttachments(el, 'jconon_scheda_anonima:document', ApplicationFp.displayEsperienzeOIV, 'actions.schedaAnonima');
-              };
-            }
+            
+            
             if (callData['jconon_call:elenco_sezioni_domanda'].indexOf('affix_tabElencoProdotti') >= 0) {
               customButtons.productList = function () {
                 //Elenco Prodotti
@@ -1003,23 +1007,35 @@ define(['jquery', 'header', 'json!common', 'cnr/cnr.bulkinfo', 'cnr/cnr.search',
                 scheda_valutazione: 'CAN_CREATE_DOCUMENT',
                 operations: 'CAN_CREATE_DOCUMENT'
               }, customButtons, {
-                print: 'icon-print',
-                attachments : 'icon-download-alt',
-                curriculum: 'icon-file-alt',
-                schedaAnonima: 'icon-file-alt',
-                productList: 'icon-list',
-                productSelected: 'icon-list-ol',
-                reopen: 'icon-share',
-                modificaProfilo : 'icon-share',
-                scheda_valutazione: 'icon-table',
-                operations: 'icon-list',
-                escludi: 'icon-arrow-down',
-                comunicazioni: 'icon-envelope text-info',
-                comunicazione: 'icon-envelope text-success',
-                inserisci: 'icon-arrow-up',
-                assegna_fascia: 'icon-edit',
-                preavviso_rigetto: 'icon-dashboard text-error',
-                soccorso_istruttorio: 'icon-dashboard text-error'
+            	  print: 'icon-print',
+                  attachments : 'icon-download-alt',
+                  
+                  schedaAnonima: 'icon-file-alt',
+                  
+                  curriculum: 'icon-file-alt',
+                  comunicazioni: 'icon-envelope text-info',
+  				visualizza_comunicazioni: 'icon-eye-open',
+  				note: 'icon-edit',
+  				visualizza_note: 'icon-eye-open',
+  				assegna_fascia: 'icon-edit',
+  				inserisci: 'icon-arrow-up',
+  				escludi: 'icon-arrow-down',
+  				
+                  productList: 'icon-list',
+                  productSelected: 'icon-list-ol',
+                  reopen: 'icon-share',
+                  modificaProfilo : 'icon-share',
+                  scheda_valutazione: 'icon-table',
+                  operations: 'icon-list',
+                  
+                 
+  				rinnovo: 'icon-eye-open',
+  				
+                  comunicazione: 'icon-envelope text-success',
+                  
+                 
+                  preavviso_rigetto: 'icon-dashboard text-error',
+                  soccorso_istruttorio: 'icon-dashboard text-error'
               }, undefined, true).appendTo(target);
             }
           });
